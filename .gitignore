@@ -129,6 +129,8 @@ $RECYCLE.BIN/
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+/themes/gourmar/node_modules/
+/themes/gourmar/dist/
 
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,visualstudiocode,wordpress
