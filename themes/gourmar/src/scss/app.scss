@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 
-@layer components {
-  //@import "./cards.scss";
-}
+@import "./header.scss";
+@import "./main-menu.scss";
 
 @tailwind utilities;
