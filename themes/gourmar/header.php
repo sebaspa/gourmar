@@ -33,5 +33,5 @@
       </div>
     </div>
     <a href="<?php echo esc_url(home_url('/contact')); ?>"
-      class="text-white py-2 px-4 md:py-3 md:px-8 border-2 border-white rounded-full order-2 md:order-3 uppercase md:hidden lg:block text-xs md:text-base"><?php _e('Contact', 'gourmar'); ?></a>
+      class="text-white py-2 px-4 md:py-3 md:px-8 border-2 border-white rounded-full order-2 md:order-3 uppercase md:hidden lg:block text-xs md:text-base font-novecento"><?php _e('Contact', 'gourmar'); ?></a>
   </header>

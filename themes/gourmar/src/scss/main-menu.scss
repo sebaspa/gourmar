@@ -4,7 +4,7 @@
   .menu-item {
     @apply pb-3 w-full md:w-auto text-center;
     a {
-      @apply text-white uppercase;
+      @apply text-white uppercase font-novecento text-base;
     }
   }
   .current-menu-item {

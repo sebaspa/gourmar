@@ -3,6 +3,11 @@ module.exports = {
   content: require('fast-glob').sync(['**/*.php']),
   theme: {
     extend: {
+      fontFamily: {
+        'novecento': ['Novecento Regular', 'sans-serif'],
+        'novecento-bold': ['Novecento Bold', 'sans-serif'],
+        'novecento-light': ['Novecento Light', 'sans-serif'],
+      },
       colors: {
         primary: {
           100: "#ccd0e7",
