@@ -3,10 +3,15 @@ module.exports = {
   content: require('fast-glob').sync(['**/*.php']),
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: '1rem',
+      },
       fontFamily: {
         'novecento': ['Novecento Regular', 'sans-serif'],
         'novecento-bold': ['Novecento Bold', 'sans-serif'],
         'novecento-light': ['Novecento Light', 'sans-serif'],
+        'adelica-brush': ['Adelica Brush', 'sans-serif'],
       },
       colors: {
         primary: {

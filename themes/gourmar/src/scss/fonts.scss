@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Novecento Regular";
-  src: url("../fonts/NovecentosanswideNormalRegular.eot");
+  src: url("../../fonts/NovecentosanswideNormalRegular.eot");
   src:
-    url("../fonts/NovecentosanswideNormalRegular.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/NovecentosanswideNormalRegular.woff2") format("woff2"),
-    url("../fonts/NovecentosanswideNormalRegular.woff") format("woff"),
-    url("../fonts/NovecentosanswideNormalRegular.ttf") format("truetype");
+    url("../../fonts/NovecentosanswideNormalRegular.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/NovecentosanswideNormalRegular.woff2") format("woff2"),
+    url("../../fonts/NovecentosanswideNormalRegular.woff") format("woff"),
+    url("../../fonts/NovecentosanswideNormalRegular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -13,12 +13,12 @@
 
 @font-face {
   font-family: "Novecento Bold";
-  src: url("../fonts/NovecentosanswideUltraLightBold.eot");
+  src: url("../../fonts/NovecentosanswideUltraLightBold.eot");
   src:
-    url("../fonts/NovecentosanswideUltraLightBold.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/NovecentosanswideUltraLightBold.woff2") format("woff2"),
-    url("../fonts/NovecentosanswideUltraLightBold.woff") format("woff"),
-    url("../fonts/NovecentosanswideUltraLightBold.ttf") format("truetype");
+    url("../../fonts/NovecentosanswideUltraLightBold.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/NovecentosanswideUltraLightBold.woff2") format("woff2"),
+    url("../../fonts/NovecentosanswideUltraLightBold.woff") format("woff"),
+    url("../../fonts/NovecentosanswideUltraLightBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -26,13 +26,26 @@
 
 @font-face {
   font-family: "Novecento Light";
-  src: url("../fonts/NovecentosanswideLightRegular.eot");
+  src: url("../../fonts/NovecentosanswideLightRegular.eot");
   src:
-    url("../fonts/NovecentosanswideLightRegular.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/NovecentosanswideLightRegular.woff2") format("woff2"),
-    url("../fonts/NovecentosanswideLightRegular.woff") format("woff"),
-    url("../fonts/NovecentosanswideLightRegular.ttf") format("truetype");
+    url("../../fonts/NovecentosanswideLightRegular.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/NovecentosanswideLightRegular.woff2") format("woff2"),
+    url("../../fonts/NovecentosanswideLightRegular.woff") format("woff"),
+    url("../../fonts/NovecentosanswideLightRegular.ttf") format("truetype");
   font-weight: normal∂;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Adelica Brush";
+  src: url("../../fonts/AdelicaBrush.eot");
+  src:
+    url("../../fonts/AdelicaBrush.eot?#iefix") format("embedded-opentype"),
+    url("../../fonts/AdelicaBrush.woff2") format("woff2"),
+    url("../../fonts/AdelicaBrush.woff") format("woff"),
+    url("../../fonts/AdelicaBrush.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }

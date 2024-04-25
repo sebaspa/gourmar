@@ -110,6 +110,8 @@ $RECYCLE.BIN/
 
 # Example plugin
 /plugins/hello.php
+/plugins/elementor
+/plugins/image-optimization
 
 # Uploads
 /uploads/

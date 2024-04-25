@@ -13,5 +13,14 @@
 }
 
 .main-menu {
-  @apply absolute md:relative top-[75px] md:top-0 right-0;
+  @apply absolute z-10 md:relative top-[75px] md:top-0 right-0;
+}
+
+#primary-menu-footer {
+  @apply flex flex-col md:flex-row md:items-center gap-2 md:gap-5 py-3 md:py-7;
+  .menu-item {
+    a {
+      @apply text-white uppercase font-novecento text-sm;
+    }
+  }
 }
