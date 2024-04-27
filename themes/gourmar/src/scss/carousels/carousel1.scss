@@ -1,0 +1,19 @@
+.carousel1 {
+  @apply w-full h-[calc(100vh-96px)] relative;
+
+  &__image {
+    @apply w-full h-[calc(100vh-96px)];
+
+    img {
+      @apply w-full object-cover object-center;
+    }
+  }
+
+  &__content {
+    @apply w-full h-[calc(100vh-96px)] absolute z-10 top-0 left-0 flex items-center;
+
+    &__wrapper {
+      @apply w-full max-w-7xl mx-auto px-4;
+    }
+  }
+}
