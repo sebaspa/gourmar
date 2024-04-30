@@ -1,0 +1,24 @@
+.carousel2 {
+  @apply w-full md:h-[700px] relative;
+
+  &__container {
+    @apply w-full h-full;
+  }
+
+  &__image {
+    @apply w-full h-full;
+
+    img {
+      @apply w-full object-cover object-center h-full #{!important};
+    }
+  }
+
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      @apply w-4 h-4 bg-white opacity-100;
+    }
+    .swiper-pagination-bullet-active {
+      @apply bg-yellow-500;
+    }
+  }
+}

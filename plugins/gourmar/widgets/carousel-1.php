@@ -140,7 +140,7 @@ class Carousel1 extends Widget_Base
             <div class="carousel1">
               <div class="carousel1__image">
                 <img src="<?php esc_attr_e($slide[$prefix . 'slider_bg']['url']); ?>" class="carousel1__image-img"
-                  alt="<?php esc_attr_e($slide[$prefix . 'slider_description']); ?>" loading="lazy" decoding="async" />
+                  alt="<?php esc_attr_e($slide[$prefix . 'slider_title']); ?>" loading="lazy" decoding="async" />
               </div>
               <div class="carousel1__content">
                 <div class="carousel1__content__wrapper">
@@ -159,7 +159,7 @@ class Carousel1 extends Widget_Base
         <?php endforeach; ?>
       </div>
       <div class="container max-w-7xl mx-auto">
-        <div class="swiper-pagination !relative !text-left !bottom-9"></div>
+        <div class="swiper-pagination swiper-pagination-carousel1 !relative !text-left !bottom-9"></div>
       </div>
     </div>
     <?php

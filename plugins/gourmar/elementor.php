@@ -134,6 +134,7 @@ final class GourmarWidgets
   public function init_widgets()
   {
     require_once GOUORMAR_PLUGIN_PATH . '/widgets/carousel-1.php';
+    require_once GOUORMAR_PLUGIN_PATH . '/widgets/carousel-2.php';
   }
 
   /**
