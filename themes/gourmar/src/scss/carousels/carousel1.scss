@@ -1,19 +1,42 @@
 .carousel1 {
-  @apply w-full h-[calc(100vh-96px)] relative;
+  @apply w-full h-[calc(100vh-76.45px)] md:h-[calc(100vh-96px)] relative;
 
   &__image {
-    @apply w-full h-[calc(100vh-96px)];
+    @apply w-full h-[calc(100vh-76.45px)] md:h-[calc(100vh-96px)];
 
     img {
-      @apply w-full object-cover object-center;
+      @apply w-full object-cover object-center h-screen #{!important};
     }
   }
 
   &__content {
-    @apply w-full h-[calc(100vh-96px)] absolute z-10 top-0 left-0 flex items-center;
+    @apply w-full h-[calc(100vh-76.45px)] md:h-[calc(100vh-96px)] absolute z-10 top-0 left-0 flex items-center;
 
     &__wrapper {
       @apply w-full max-w-7xl mx-auto px-4;
+    }
+  }
+
+  &__title {
+    @apply text-base text-primary-500 font-novecento uppercase mb-4;
+  }
+
+  &__description {
+    @apply font-adelica-brush text-primary-500 text-3xl md:text-6xl leading-[1.4] max-w-[660px] mb-6;
+  }
+
+  &__button {
+    @apply bg-secondary-500 text-white uppercase font-novecento text-base py-3 px-6 rounded-full;
+  }
+}
+
+.carousel_1 {
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      @apply w-4 h-4 bg-white opacity-100;
+    }
+    .swiper-pagination-bullet-active {
+      @apply bg-yellow-500;
     }
   }
 }
