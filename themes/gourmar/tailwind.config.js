@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: require('fast-glob').sync(['**/*.php']),
+  content: require('fast-glob').sync(['**/*.php', '../../plugins/gourmar/**/*.php']),
   theme: {
     extend: {
       container: {
@@ -35,6 +35,17 @@ module.exports = {
           700: "#006487",
           800: "#00435a",
           900: "#00212d"
+        },
+        yellow: {
+          100: "#fff4d9",
+          200: "#ffeab3",
+          300: "#ffdf8d",
+          400: "#ffd567",
+          500: "#ffca41",
+          600: "#cca234",
+          700: "#997927",
+          800: "#66511a",
+          900: "#33280d"
         },
       }
     },
