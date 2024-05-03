@@ -1,0 +1,10 @@
+.pagination {
+  @apply flex items-center justify-center gap-2;
+  .page-numbers {
+    @apply w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm md:text-lg;
+  }
+
+  .current {
+    @apply bg-yellow-500 text-primary-500;
+  }
+}

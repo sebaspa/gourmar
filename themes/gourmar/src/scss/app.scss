@@ -4,7 +4,10 @@
 
 @import "./header.scss";
 @import "./main-menu.scss";
+@import "./pagination.scss";
 @import "./carousels/carousel1.scss";
 @import "./carousels/carousel2.scss";
+
+@import "./cards/recipe.scss";
 
 @tailwind utilities;
