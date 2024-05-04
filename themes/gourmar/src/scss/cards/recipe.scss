@@ -7,7 +7,7 @@
   }
 
   &__title {
-    @apply text-black-500 text-xl mb-3 font-bold h-14;
+    @apply text-black-500 text-xl mb-3 font-bold text-ellipsis overflow-hidden whitespace-nowrap;
   }
 
   &__date {
