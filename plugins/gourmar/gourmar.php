@@ -47,3 +47,9 @@ require_once dirname(__FILE__) . '/taxonomies/index.php';
  */
 
 require_once dirname(__FILE__) . '/fields/index.php';
+
+/**
+ * Custom Widgets.
+ */
+
+require_once dirname(__FILE__) . '/widgets/index.php';
