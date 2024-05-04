@@ -110,6 +110,12 @@ $RECYCLE.BIN/
 
 # Example plugin
 /plugins/hello.php
+/plugins/elementor
+/plugins/image-optimization
+/plugins/wp-migrate-db
+/plugins/woocommerce
+/plugins/jetpack/
+/plugins/formidable/
 
 # Uploads
 /uploads/
@@ -131,6 +137,7 @@ $RECYCLE.BIN/
 #/wp-content/themes
 /themes/gourmar/node_modules/
 /themes/gourmar/dist/
+/plugins/gourmar/libs/
 
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,visualstudiocode,wordpress

@@ -1,0 +1,28 @@
+.cardRecipe {
+  &__image {
+    @apply mb-4 h-[232px] bg-gray-bg-500;
+    &-img {
+      @apply w-full object-cover h-full #{!important};
+    }
+  }
+
+  &__title {
+    @apply text-black-500 text-xl mb-3 font-bold text-ellipsis overflow-hidden whitespace-nowrap;
+  }
+
+  &__date {
+    @apply text-black-500 text-sm uppercase;
+  }
+
+  &__category {
+    @apply text-primary-500 text-sm uppercase;
+  }
+
+  &__separator {
+    @apply h-[1px] w-full bg-gray-500 mb-3;
+  }
+
+  &__description {
+    @apply text-gray-500 text-base;
+  }
+}

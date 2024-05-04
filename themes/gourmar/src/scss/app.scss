@@ -1,8 +1,14 @@
 @tailwind base;
+@import url("./fonts.scss");
 @tailwind components;
 
-@layer components {
-  //@import "./cards.scss";
-}
+@import "./header.scss";
+@import "./main-menu.scss";
+@import "./pagination.scss";
+@import "./carousels/carousel1.scss";
+@import "./carousels/carousel2.scss";
+@import "./cards/importantEvents.scss";
+
+@import "./cards/recipe.scss";
 
 @tailwind utilities;
