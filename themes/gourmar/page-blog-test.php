@@ -93,11 +93,21 @@ $recipes = new WP_Query(
       <?php foreach ($recipes->posts as $recipe): ?>
         <div class="col-span-12 md:col-span-6 lg:col-span-4">
           <div class="cardRecipe">
-            <?php $recipeImage = get_post_meta($recipe->ID, 'gourmar_fields_recipe_image', true); ?>
-            <?php $recipeCategory = get_the_terms($recipe->ID, 'recipe-category'); ?>
-            <?php $shortDescription = get_post_meta($recipe->ID, 'gourmar_fields_recipe_shortDescription', true); ?>
-            <img src="<?php echo $recipeImage; ?>" alt="<?php echo $recipe->post_title ?>" width="100%" height="auto"
-              class="cardRecipe__image" />
+            <?php
+            $recipeCategory = get_the_terms($recipe->ID, 'recipe-category');
+            $shortDescription = get_post_meta($recipe->ID, 'gourmar_fields_recipe_shortDescription', true);
+            $image_id = get_post_meta($recipe->ID, 'gourmar_fields_recipe_image_id', true);
+            $image_size = 'recipe';
+            $image_src = wp_get_attachment_image_src($image_id, $image_size);
+            ?>
+            <a href="<?php echo get_permalink($recipe->ID, false) ?>">
+              <div class="cardRecipe__image relative">
+                <img src="<?php echo get_template_directory_uri() . '/images/animate-loading.gif' ?>" alt="loading"
+                  width="100" height="100" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0" />
+                <img src="<?php echo $image_src[0]; ?>" alt="<?php echo $recipe->post_title ?>" width="100%" height="auto"
+                  class="cardRecipe__image-img relative z-10" loading="lazy" />
+              </div>
+            </a>
             <p class="cardRecipe__title"><?php echo $recipe->post_title ?></p>
             <div class="flex gap-2 items-center mb-3">
               <?php
@@ -112,7 +122,6 @@ $recipes = new WP_Query(
             <div class="cardRecipe__separator"></div>
             <p class="cardRecipe__description"><?php echo $shortDescription ?></p>
           </div>
-          <h2><a href="<?php echo get_permalink($recipe->ID, false) ?>"><?php echo $recipe->post_title ?></a></h2>
         </div>
       <?php endforeach;
       wp_reset_postdata(); ?>

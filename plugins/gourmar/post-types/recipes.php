@@ -44,7 +44,6 @@ $args = array(
   'has_archive' => true,
   'exclude_from_search' => false,
   'publicly_queryable' => true,
-  //'capability_type'       => 'contacts',
   'map_meta_cap' => true,
   'query_var' => true,
   'rewrite' => array('slug' => 'recipe'),
