@@ -61,8 +61,7 @@ $recipes = new WP_Query(
           <select name="recipeCategory" id="recipeCategory"
             class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base">
             <?php foreach ($cats as $cat): ?>
-              <option value="<?php echo $cat->slug; ?>"
-                selected="<?php echo ($cat->slug == $recipeCategory) ? 'selected' : ''; ?>">
+              <option value="<?php echo $cat->slug; ?>" <?php echo ($cat->slug == $recipeCategory) ? 'selected' : ''; ?>>
                 <?php echo $cat->name; ?>
               </option>
             <?php endforeach; ?>
