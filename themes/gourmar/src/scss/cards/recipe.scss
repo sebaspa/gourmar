@@ -2,7 +2,7 @@
   &__image {
     @apply mb-4 h-[232px] bg-gray-bg-500;
     &-img {
-      @apply w-full object-cover;
+      @apply w-full object-cover h-full #{!important};
     }
   }
 
