@@ -113,6 +113,9 @@ $RECYCLE.BIN/
 /plugins/elementor
 /plugins/image-optimization
 /plugins/wp-migrate-db
+/plugins/woocommerce
+/plugins/jetpack/
+/plugins/formidable/
 
 # Uploads
 /uploads/
