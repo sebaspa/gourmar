@@ -1,0 +1,7 @@
+.importantEvents {
+  @apply h-[800px] #{!important};
+  @apply overflow-scroll #{!important};
+  &__separator {
+    @apply w-2 h-10 bg-yellow-500 mx-auto rounded;
+  }
+}
