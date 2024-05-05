@@ -27,7 +27,7 @@ class customMapsWidget extends WP_Widget
                     </select>
                     </div>
                     <div class="col-span-12 md:col-span-4">
-                        <input type="text" id="provider-search" placeholder="Search for provider" class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base">
+                        <input type="text" id="provider-search" placeholder="Buscar distribuidor..." class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base">
                     </div>
                     <!-- Button  -->
                     <div class="col-span-12 md:col-span-3">
@@ -50,7 +50,6 @@ class customMapsWidget extends WP_Widget
 
     public function form($instance)
     {
-        
     }
 
     public function update($new_instance, $old_instance)

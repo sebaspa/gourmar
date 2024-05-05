@@ -5,7 +5,7 @@ export default class LeaftleftFindUs {
 
   init() {
     // Initialize Leaflet map
-    var map = L.map("map").setView([9.7489, -83.7534], 8); // Initial center and zoom level for Panamá
+    var map = L.map("map").setView([8.9824, -79.5199], 5); // Initial center and zoom level for Panamá
 
     // Add a tile layer from Mapbox (you can use any tile layer provider)
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -141,7 +141,7 @@ export default class LeaftleftFindUs {
                 icon: customIcon,
               }).addTo(map);
               marker.bindPopup(
-                "<b>" + provider.name + "</b><br>" + provider.info
+                "<b class='text-primary-500'>" + provider.name + "</b><br>" + provider.info
               );
               map.setView(provider.location, 10); // Change the zoom level as needed
               return; // Stop searching after finding the first matching provider

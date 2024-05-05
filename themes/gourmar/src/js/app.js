@@ -1,6 +1,7 @@
 import MainMenu from "./mainMenu"
 import Carousels from "./carousels"
 import LeaftleftFindUs from "./leaftleftFindUs"
+import OfficesMap from "./officesMap"
 
 jQuery(function () {
   if (jQuery('#mainMenu').length > 0) {
@@ -17,5 +18,9 @@ jQuery(function () {
   
   if (jQuery("#findusMap").length > 0) {
     new LeaftleftFindUs();
+  }
+
+  if (jQuery("#mapOffices").length > 0) {
+    new OfficesMap();
   }
 })

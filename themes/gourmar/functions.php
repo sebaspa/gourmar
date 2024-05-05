@@ -67,7 +67,7 @@ function gourmar_styles_scripts()
   wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet/dist/leaflet.js', array(), '1.0.0', true);
   wp_enqueue_style('gourmar-style', get_template_directory_uri() . '/dist/css/app.css', array(), VERSION);
   wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11', true);
-  wp_enqueue_script('gourmar-script', get_template_directory_uri() . '/dist/js/app.js', array('jquery', 'swiper-js', 'leaflet-js'      ), VERSION, true);
+  wp_enqueue_script('gourmar-script', get_template_directory_uri() . '/dist/js/app.js', array('jquery', 'swiper-js', 'leaflet-js'), VERSION, true);
 }
 
 add_action('wp_enqueue_scripts', 'gourmar_styles_scripts');
