@@ -1,4 +1,4 @@
-if (document.querySelector("#product-category").length > 0) {
+if (document.querySelector("#product-category")) {
     jQuery(document).ready(function ($) {
       // Filter products when clicking the filter button
       jQuery("#filter-products-btn").on("click", function () {
