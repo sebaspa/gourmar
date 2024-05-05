@@ -14,5 +14,4 @@ jQuery(function () {
   if (jQuery('.carousel2').length > 0) {
     new Carousels().carousel2Init()
   }
-
 })

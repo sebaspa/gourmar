@@ -74,7 +74,7 @@ add_action('wp_enqueue_scripts', 'gourmar_styles_scripts');
 // FILTER PRODUCTS START //
 function enqueue_filter_products_script()
 {
-  wp_enqueue_script('filter-products', get_template_directory_uri() . '/products/filter-products.js', array('jquery'), null, true);
+  wp_enqueue_script('filter-products', get_template_directory_uri() . '/products/filterProducts.js', array('jquery'), null, true);
   wp_localize_script('filter-products', 'filter_products_ajax', array('ajax_url' => admin_url('admin-ajax.php')));
 }
 
@@ -118,13 +118,14 @@ function filter_products()
     <div class="grid grid-cols-[repeat(4,_1fr)] gap-4">
       <?php
       while ($products_query->have_posts()) {
+        // Loop through the products
         $products_query->the_post();
         // Output the product content
         echo '<div class="my-4 p-4">';
         echo '<a href="' . esc_url(get_permalink()) . '" class="product-link">';
         // Thumbnail or image
         echo '<div class="w-full relative">';
-        echo '<div class="absolute top-2 right-2 bg-yellow-500 text-primary-500 text-xs uppercase px-4 py-1 rounded-xl font-novecento">' . get_the_term_list(get_the_ID(), 'product_cat', '', ', ', '') . '</div>';
+        echo '<div class="absolute top-2 right-2 bg-yellow-500 text-primary-500 text-xs uppercase px-4 py-1 rounded-xl font-novecento">' . getCategories(get_the_ID()) . '</div>';
         if (has_post_thumbnail()) {
           the_post_thumbnail('product_thumbnail');
         } else {
@@ -132,7 +133,7 @@ function filter_products()
         }
         echo '</div>';
         // Category
-        echo '<p class="text-xs mb-2 mt-3 text-primary-500 font-novecento uppercase">' . get_the_term_list(get_the_ID(), 'product_cat', '', ', ', '') . '</p>';
+        echo '<p class="text-xs mb-2 mt-3 text-primary-500 font-novecento uppercase">' . getCategories(get_the_ID()) . '</p>';
         // Title
         echo '<h2 class="text-xl font-semibold text-black-500 mb-1">' . get_the_title() . '</h2>';
         // Short description
@@ -161,5 +162,18 @@ function filter_products()
 }
 
 add_image_size('product_thumbnail', 310, 350, true);
+
+function getCategories($product_id) {
+  // Get the categories
+  $categories = get_the_terms($product_id, 'product_cat');
+  if ($categories && !is_wp_error($categories)) {
+    $category_names = array();
+    foreach ($categories as $category) {
+      $category_names[] = $category->name;
+    }
+    return implode(', ', $category_names);
+  }
+}
+
 
 // FILTER PRODUCTS END //
