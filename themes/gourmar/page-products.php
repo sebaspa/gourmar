@@ -48,8 +48,7 @@ get_header();
   </div>
 </div>
 <div class="container mx-auto max-w-7xl px-4">
-
-  <div id="product-list" class="flex flex-col"></div>
+  <div id="product-list"></div>
 </div>
 
 <?php
