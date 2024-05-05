@@ -44,13 +44,17 @@ class lastProducts extends WP_Widget
           if (has_post_thumbnail($product_id)):
             $product_image = get_the_post_thumbnail_url($product_id);
             ?>
-            <div class="col-span-12 sm:col-span-6 md:col-span-4">
+            <div class="col-span-12 sm:col-span-6 md:col-span-4 cardLastProduct">
               <a href="<?php echo get_permalink(); ?>">
-                <img src="<?php echo $product_image; ?>" alt="<?php echo get_the_title(); ?>">
+                <img src="<?php echo $product_image; ?>" alt="<?php echo get_the_title(); ?>" class="cardLastProduct__image">
               </a>
-              <h4><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h4>
-              <p><?php echo get_the_term_list($product_id, 'product_cat'); ?></p>
-              <a href="<?php echo get_permalink(); ?>" class="product-link">View Details</a>
+              <div class="cardLastProduct__content group animated-background">
+                <a class="cardLastProduct__content-btn" href="<?php echo get_permalink(); ?>">
+                  →
+                </a>
+                <p class="cardLastProduct__category"><?php echo get_the_term_list($product_id, 'product_cat'); ?></p>
+                <p class="cardLastProduct__title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></p>
+              </div>
             </div>
             <?php
           endif;
