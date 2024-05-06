@@ -3,13 +3,21 @@
 @tailwind components;
 
 @import "./header.scss";
-@import "./main-menu.scss";
 @import "./pagination.scss";
+
+@import "./main-menu.scss";
+
 @import "./carousels/carousel1.scss";
 @import "./carousels/carousel2.scss";
+
 @import "./cards/importantEvents.scss";
 @import "./cards/products.scss";
-
 @import "./cards/recipe.scss";
+
+@import "./forms/contact.scss";
+
+@import "./blog.scss";
+
+@import "./map.scss";
 
 @tailwind utilities;

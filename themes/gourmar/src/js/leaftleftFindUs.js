@@ -66,9 +66,17 @@ export default class LeaftleftFindUs {
       ],
       panama: [
         {
-          name: "Provider X",
+          name: '<p class="markerPopup__title">Provider X</p>',
           location: [8.9824, -79.5199],
-          info: "Provider X Info",
+          info: `
+          <div class="markerPopup__info">
+            <ul>
+              <li>Address: 123 Main Street</li>
+              <li>City: Panamá</li>
+              <li>Phone: (123) 456-7890</li>
+            </ul>
+          </div>
+        `,
         },
         {
           name: "Provider Y",
@@ -140,9 +148,12 @@ export default class LeaftleftFindUs {
               var marker = L.marker(provider.location, {
                 icon: customIcon,
               }).addTo(map);
-              marker.bindPopup(
-                "<b class='text-primary-500'>" + provider.name + "</b><br>" + provider.info
-              );
+              marker.bindPopup(`
+                <div class="markerPopup">
+                  <h3>${provider.name}</h3>
+                  <p>${provider.info}</p>
+                </div>
+              `);
               map.setView(provider.location, 10); // Change the zoom level as needed
               return; // Stop searching after finding the first matching provider
             }

@@ -1,0 +1,45 @@
+.contactForm {
+  .gform_title,
+  .gform_description {
+    @apply hidden;
+  }
+
+  .gform-body {
+    @apply grid-cols-12 gap-4;
+    #field_1_1,
+    #field_1_3,
+    #field_1_4,
+    #field_1_5 {
+      @apply col-span-12 md:col-span-6;
+    }
+
+    .gfield_label {
+      @apply text-black-500 text-sm font-novecento uppercase mb-2;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      @apply bg-white border border-gray-500 px-3 py-4 rounded-lg w-full;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      @apply h-10;
+    }
+
+    textarea {
+      @apply h-24;
+      min-block-size: 6rem !important;
+    }
+  }
+  .gform-theme--foundation .gform_fields {
+    @apply gap-4;
+  }
+
+  #gform_submit_button_1 {
+    @apply bg-primary-500 py-2 px-12 text-white uppercase text-base rounded-full;
+  }
+}

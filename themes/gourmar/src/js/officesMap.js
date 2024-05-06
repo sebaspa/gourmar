@@ -26,7 +26,15 @@ export default class OfficesMap {
       {
         name: "Provider X",
         location: [8.9824, -79.5199],
-        info: "Provider X Info",
+        info: `
+          <div class="markerPopup__info">
+            <ul>
+              <li>Address: 123 Main Street</li>
+              <li>City: Panamá</li>
+              <li>Phone: (123) 456-7890</li>
+            </ul>
+          </div>
+        `,
       },
       {
         name: "Provider Y",
@@ -48,7 +56,12 @@ export default class OfficesMap {
     // Add markers for each office
     officeMarkers.forEach(function (office) {
       var marker = L.marker(office.location, { icon: customIcon }).addTo(map);
-      marker.bindPopup("<b>" + office.name + "</b><br>" + office.info);
+      marker.bindPopup(`
+        <div class="markerPopup">
+          <h3>${office.name}</h3>
+          <p>${office.info}</p>
+        </div>
+      `);
     });
   }
 }

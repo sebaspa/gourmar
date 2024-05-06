@@ -39,3 +39,30 @@
     background-position: 100% 50%;
   }
 }
+
+.productCard {
+  @apply col-span-12 md:col-span-4 lg:col-span-3;
+
+  &__image {
+    @apply h-72 bg-gray-bg-500 relative;
+    img {
+      @apply w-full h-72 object-cover;
+    }
+
+    &--bullet {
+      @apply absolute top-2 right-2 bg-yellow-500 text-primary-500 text-xs uppercase px-4 py-1 rounded-xl font-novecento;
+    }
+  }
+
+  &__category {
+    @apply text-xs mb-2 mt-3 text-primary-500 font-novecento uppercase;
+  }
+
+  &__title {
+    @apply text-xl font-semibold text-black-500 mb-1;
+  }
+
+  &__description {
+    @apply text-gray-500;
+  }
+}

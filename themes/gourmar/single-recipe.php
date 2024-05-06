@@ -13,19 +13,34 @@ $image_id = get_post_meta(get_the_ID(), 'gourmar_fields_recipe_image_id', true);
 $image_size = 'full';
 $image_src = wp_get_attachment_image_src($image_id, $image_size);
 $recipeText = get_post_meta(get_the_ID(), 'gourmar_fields_recipe_recipeDescription', true);
+$shortDescription = get_post_meta(get_the_ID(), 'gourmar_fields_recipe_shortDescription', true);
 ?>
 
-<div class="containe max-w-7xl mx-auto px-4 py-10">
-  <h1 class="font-adelica-brush text-2xl md:text-6xl text-primary-500 mb-10 text-center"><?php echo get_the_title() ?>
-  </h1>
-  <div class="relative w-full bg-gray-bg-500 min-h-[200px] md:min-h[600px]">
-    <img src="<?php echo get_template_directory_uri() . '/images/animate-loading.gif' ?>" alt="loading" width="200"
-      height="200" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0" />
-    <img src="<?php echo $image_src[0]; ?>" alt="<?php echo get_the_title(); ?>"
-      class="mb-8 w-full h-auto relative z-10" width="100%" height="auto" />
+<div class="container max-w-7xl mx-auto px-4 py-12">
+  <div class="grid grid-cols-12 gap-8 mb-6">
+    <div class="col-span-12 lg:col-span-8">
+      <div class="relative w-full bg-gray-bg-500 min-h-[200px] md:min-h[600px]">
+        <img src="<?php echo get_template_directory_uri() . '/images/animate-loading.gif' ?>" alt="loading" width="200"
+          height="200" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0" />
+        <img src="<?php echo $image_src[0]; ?>" alt="<?php echo get_the_title(); ?>"
+          class="w-full h-auto relative z-10 rounded-lg" width="100%" height="auto" />
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-4">
+      <h1 class="font-adelica-brush text-2xl md:text-4xl text-primary-500 mb-6 md:mb-10">
+        <?php echo get_the_title() ?>
+      </h1>
+      <span
+        class="font-novecento font-bold uppercase text-xs mb-5 text-primary-500 bg-yellow-500 rounded-full px-4 py-2">
+        Pescados
+      </span>
+      <p class="mt-5 text-base text-black-500"><?php echo $shortDescription; ?></p>
+    </div>
   </div>
-  <p class="text-base">
-    <?php echo $recipeText; ?>
+  <p class="font-adelica-brush text-2xl md:text-5xl text-primary-500 mb-6"><?php echo __('Receta', 'gourmar') ?>
   </p>
+  <div class=" blogContent">
+    <?php echo $recipeText; ?>
+  </div>
 </div>
 <?php get_footer(); ?>

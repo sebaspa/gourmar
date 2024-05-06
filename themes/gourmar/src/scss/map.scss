@@ -1,0 +1,25 @@
+.leaflet-popup-content-wrapper {
+  @apply bg-gray-bg-500;
+
+  .leaflet-popup-tip-container {
+    @apply bg-gray-bg-500;
+  }
+}
+
+.leaflet-popup-tip {
+  @apply bg-gray-bg-500;
+}
+.markerPopup {
+  &__title {
+    @apply text-primary-500 text-lg font-bold m-0 #{!important};
+  }
+
+  &__info {
+    @apply text-black-500;
+    ul {
+      li {
+        @apply text-black-500 mb-1;
+      }
+    }
+  }
+}
