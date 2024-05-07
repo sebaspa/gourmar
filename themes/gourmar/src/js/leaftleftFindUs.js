@@ -1,7 +1,7 @@
 export default class LeaftleftFindUs {
   constructor() {
     this.init();
-    console.log('gourmar', gourmar)
+    console.log("gourmar", gourmar);
   }
 
   init() {
@@ -22,8 +22,7 @@ export default class LeaftleftFindUs {
 
     // Define custom icon for markers
     var customIcon = L.icon({
-      iconUrl:
-        `${gourmar.homeurl}/wp-content/themes/gourmar/images/marker.png`,
+      iconUrl: `${gourmar.homeurl}/wp-content/themes/gourmar/images/marker.png`,
       iconSize: [40, 49], // size of the icon
       iconAnchor: [20, 49], // point of the icon which will correspond to marker's location
       popupAnchor: [0, -50], // point from which the popup should open relative to the iconAnchor
@@ -41,27 +40,59 @@ export default class LeaftleftFindUs {
     var countryProviders = {
       costarica: [
         {
-          name: "Provider A",
+          name: '<p class="markerPopup__title">Provider A</p>',
           location: [9.7489, -83.7534],
-          info: "Provider A Info",
+          info: `
+          <div class="markerPopup__info">
+            <ul>
+              <li>Address: 123 Main Street</li>
+              <li>City: Costarica city</li>
+              <li>Phone: (123) 456-7890</li>
+            </ul>
+          </div>
+          `,
         },
         {
-          name: "Provider B",
+          name: '<p class="markerPopup__title">Provider B</p>',
           location: [10.3157, -84.8227],
-          info: "Provider B Info",
+          info: `
+          <div class="markerPopup__info">
+            <ul>
+              <li>Address: 123 Main Street</li>
+              <li>City: Costarica city</li>
+              <li>Phone: (123) 456-7890</li>
+            </ul>
+          </div>
+          `,
         },
         // Add more providers for Costa Rica
       ],
       nicaragua: [
         {
-          name: "Provider 1",
+          name: '<p class="markerPopup__title">Provider 1</p>',
           location: [12.8654, -85.2072],
-          info: "Provider 1 Info",
+          info: `
+          <div class="markerPopup__info">
+            <ul>
+              <li>Address: 123 Main Street</li>
+              <li>City: Nicaragua city</li>
+              <li>Phone: (123) 456-7890</li>
+            </ul>
+          </div>
+          `,
         },
         {
-          name: "Provider 2",
+          name: '<p class="markerPopup__title">Provider 2</p>',
           location: [11.8251, -85.9083],
-          info: "Provider 2 Info",
+          info: `
+          <div class="markerPopup__info">
+            <ul>
+              <li>Address: 123 Main Street</li>
+              <li>City: Nicaragua city</li>
+              <li>Phone: (123) 456-7890</li>
+            </ul>
+          </div>
+          `,
         },
         // Add more providers for Nicaragua
       ],
@@ -80,9 +111,17 @@ export default class LeaftleftFindUs {
         `,
         },
         {
-          name: "Provider Y",
+          name: '<p class="markerPopup__title">Provider Y</div>',
           location: [9.1018, -79.4029],
-          info: "Provider Y Info",
+          info: `
+          <div class="markerPopup__info">
+            <ul>
+              <li>Address: 123 Main Street</li>
+              <li>City: Panamá</li>
+              <li>Phone: (123) 456-7890</li>
+            </ul>
+          </div>
+          `,
         },
         // Add more providers for Panama
       ],
@@ -90,7 +129,7 @@ export default class LeaftleftFindUs {
     };
 
     //Load first markers//
-    addMarkers('panama');
+    addMarkers("panama");
 
     // Event listener for the dropdown menu change
     document
