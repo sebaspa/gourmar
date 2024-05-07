@@ -82,6 +82,9 @@ add_theme_support('woocommerce');
  * Api
  */
 
+
+// Providers
+
 add_action('rest_api_init', 'gourmar_api_providers');
 
 function gourmar_api_providers()
@@ -110,13 +113,52 @@ function listProvidersApi($data)
   $providersJson = array();
   foreach ($providers->posts as $provider) {
     $providersJson[] = array(
-      'providerId' => $provider->ID,
-      'providerName' => $provider->post_title,
-      'providerCoordinates' => get_post_meta($provider->ID, 'gourmar_fields_map_coordinates', true),
-      'providerInfo' => get_post_meta($provider->ID, 'gourmar_fields_map_info', true)
+      'id' => $provider->ID,
+      'name' => $provider->post_title,
+      'cooridinates' => get_post_meta($provider->ID, 'gourmar_fields_map_coordinates', true),
+      'info' => get_post_meta($provider->ID, 'gourmar_fields_map_info', true)
     );
   }
 
   echo json_encode($providersJson);
+
+}
+// Countries
+
+add_action('rest_api_init', 'gourmar_api_countries');
+
+function gourmar_api_countries()
+{
+  register_rest_route(
+    'gourmar-api/v1',
+    '/countries/',
+    array(
+      'methods' => 'GET',
+      'callback' => 'listCountriesApi',
+    )
+  );
+}
+
+function listCountriesApi($data)
+{
+  $countries = new WP_Query(
+    array(
+      'post_status' => 'publish',
+      'post_type' => 'country',
+      'orderby' => 'date',
+      'order' => 'DESC',
+    )
+  );
+
+  $countriesJson = array();
+  foreach ($countries->posts as $provider) {
+    $countriesJson[] = array(
+      'id' => $provider->ID,
+      'name' => $provider->post_title,
+      'coordinates' => get_post_meta($provider->ID, 'gourmar_fields_country_coordinates', true),
+    );
+  }
+
+  echo json_encode($countriesJson);
 
 }

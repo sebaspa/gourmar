@@ -47,7 +47,7 @@ $args = array(
   'map_meta_cap' => true,
   'query_var' => true,
   'rewrite' => array('slug' => 'provider'),
-  'menu_icon' => 'dashicons-food',
+  'menu_icon' => 'dashicons-admin-post',
   'show_in_rest' => true,
   'rest_base' => 'provider'
 );
