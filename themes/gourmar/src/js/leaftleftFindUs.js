@@ -30,12 +30,12 @@ export default class LeaftleftFindUs {
     });
 
     // Add markers for each country
-    for (var country in countryCoordinates) {
+    /*for (var country in countryCoordinates) {
       var marker = L.marker(countryCoordinates[country], {
         icon: customIcon,
       }).addTo(map);
       marker.bindPopup(country); // Display country name on marker click
-    }
+    }*/
 
     // Define providers for each country
     var countryProviders = {
@@ -88,6 +88,9 @@ export default class LeaftleftFindUs {
       ],
       // Add more countries and their providers as needed
     };
+
+    //Load first markers//
+    addMarkers('panama');
 
     // Event listener for the dropdown menu change
     document
