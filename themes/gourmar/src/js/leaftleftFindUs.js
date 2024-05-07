@@ -13,12 +13,13 @@ export default class LeaftleftFindUs {
       attribution: "&copy; OpenStreetMap contributors",
     }).addTo(map);
 
-    var countryCoordinates = {
+    const countriesCoordinates = getCountries();
+    /*var countryCoordinates = {
       costarica: [9.7489, -83.7534], // Costa Rica
       nicaragua: [12.8654, -85.2072], // Nicaragua
       panama: [8.9824, -79.5199], // Panama
       // Add more countries and their coordinates as needed
-    };
+    };*/
 
     // Define custom icon for markers
     var customIcon = L.icon({
@@ -28,16 +29,30 @@ export default class LeaftleftFindUs {
       popupAnchor: [0, -50], // point from which the popup should open relative to the iconAnchor
     });
 
-    // Add markers for each country
-    /*for (var country in countryCoordinates) {
-      var marker = L.marker(countryCoordinates[country], {
-        icon: customIcon,
-      }).addTo(map);
-      marker.bindPopup(country); // Display country name on marker click
-    }*/
+    const getCountries = async () => {
+      const response = await fetch(
+        `${gourmar.homeurl}/wp-json/gourmar/v1/countries`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          return data;
+        });
+    };
+
+    //Get markers for each country
+    const getCountryMarkers = async () => {
+      const response = await fetch(
+        `${gourmar.homeurl}/wp-json/gourmar/v1/providers`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          return data;
+        });
+    };
 
     // Define providers for each country
-    var countryProviders = {
+    const countryProviders = getCountryMarkers();
+    /* var countryProviders = {
       costarica: [
         {
           name: '<p class="markerPopup__title">Provider A</p>',
@@ -126,7 +141,7 @@ export default class LeaftleftFindUs {
         // Add more providers for Panama
       ],
       // Add more countries and their providers as needed
-    };
+    };*/
 
     //Load first markers//
     addMarkers("panama");
