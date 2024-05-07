@@ -46,7 +46,7 @@
   &__image {
     @apply h-72 bg-gray-bg-500 relative;
     img {
-      @apply w-full h-72 object-cover;
+      @apply w-full object-cover h-72 #{!important};
     }
 
     &--bullet {

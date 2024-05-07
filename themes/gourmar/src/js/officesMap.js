@@ -15,7 +15,7 @@ export default class OfficesMap {
     // Define custom icon for markers
     var customIcon = L.icon({
       iconUrl:
-        "http://gourmar.local/wp-content/themes/gourmar/images/marker.png",
+        `${gourmar.homeurl}/wp-content/themes/gourmar/images/marker.png`,
       iconSize: [40, 49], // size of the icon
       iconAnchor: [20, 49], // point of the icon which will correspond to marker's location
       popupAnchor: [0, -50], // point from which the popup should open relative to the iconAnchor
