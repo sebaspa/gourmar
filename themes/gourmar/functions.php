@@ -77,11 +77,46 @@ add_action('wp_enqueue_scripts', 'gourmar_styles_scripts');
 
 add_theme_support('woocommerce');
 
+
 /**
- * Load WooCommerce compatibility file.
+ * Api
  */
-/*
-if (class_exists('WooCommerce')) {
-  require get_template_directory() . '/inc/woocommerce.php';
+
+add_action('rest_api_init', 'gourmar_api_providers');
+
+function gourmar_api_providers()
+{
+  register_rest_route(
+    'gourmar-api/v1',
+    '/providers/',
+    array(
+      'methods' => 'GET',
+      'callback' => 'listProvidersApi',
+    )
+  );
 }
-*/
+
+function listProvidersApi($data)
+{
+  $providers = new WP_Query(
+    array(
+      'post_status' => 'publish',
+      'post_type' => 'provider',
+      'orderby' => 'date',
+      'order' => 'DESC',
+    )
+  );
+
+  $providersJson = array();
+  foreach ($providers->posts as $provider) {
+    $providersJson[] = array(
+      'providerId' => $provider->ID,
+      'providerName' => $provider->post_title,
+      'providerCoordinates' => get_post_meta($provider->ID, 'gourmar_fields_map_coordinates', true),
+      'providerInfo' => get_post_meta($provider->ID, 'gourmar_fields_map_info', true)
+    );
+  }
+
+  echo json_encode($providersJson);
+
+}
