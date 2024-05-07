@@ -77,11 +77,88 @@ add_action('wp_enqueue_scripts', 'gourmar_styles_scripts');
 
 add_theme_support('woocommerce');
 
+
 /**
- * Load WooCommerce compatibility file.
+ * Api
  */
-/*
-if (class_exists('WooCommerce')) {
-  require get_template_directory() . '/inc/woocommerce.php';
+
+
+// Providers
+
+add_action('rest_api_init', 'gourmar_api_providers');
+
+function gourmar_api_providers()
+{
+  register_rest_route(
+    'gourmar-api/v1',
+    '/providers/',
+    array(
+      'methods' => 'GET',
+      'callback' => 'listProvidersApi',
+    )
+  );
 }
-*/
+
+function listProvidersApi($data)
+{
+  $providers = new WP_Query(
+    array(
+      'post_status' => 'publish',
+      'post_type' => 'provider',
+      'orderby' => 'date',
+      'order' => 'DESC',
+    )
+  );
+
+  $providersJson = array();
+  foreach ($providers->posts as $provider) {
+    $providersJson[] = array(
+      'id' => $provider->ID,
+      'name' => $provider->post_title,
+      'cooridinates' => get_post_meta($provider->ID, 'gourmar_fields_map_coordinates', true),
+      'info' => get_post_meta($provider->ID, 'gourmar_fields_map_info', true)
+    );
+  }
+
+  echo json_encode($providersJson);
+
+}
+// Countries
+
+add_action('rest_api_init', 'gourmar_api_countries');
+
+function gourmar_api_countries()
+{
+  register_rest_route(
+    'gourmar-api/v1',
+    '/countries/',
+    array(
+      'methods' => 'GET',
+      'callback' => 'listCountriesApi',
+    )
+  );
+}
+
+function listCountriesApi($data)
+{
+  $countries = new WP_Query(
+    array(
+      'post_status' => 'publish',
+      'post_type' => 'country',
+      'orderby' => 'date',
+      'order' => 'DESC',
+    )
+  );
+
+  $countriesJson = array();
+  foreach ($countries->posts as $provider) {
+    $countriesJson[] = array(
+      'id' => $provider->ID,
+      'name' => $provider->post_title,
+      'coordinates' => get_post_meta($provider->ID, 'gourmar_fields_country_coordinates', true),
+    );
+  }
+
+  echo json_encode($countriesJson);
+
+}
