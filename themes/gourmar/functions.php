@@ -73,3 +73,15 @@ function gourmar_styles_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'gourmar_styles_scripts');
+
+
+add_theme_support('woocommerce');
+
+/**
+ * Load WooCommerce compatibility file.
+ */
+/*
+if (class_exists('WooCommerce')) {
+  require get_template_directory() . '/inc/woocommerce.php';
+}
+*/

@@ -116,6 +116,7 @@ $RECYCLE.BIN/
 /plugins/woocommerce
 /plugins/jetpack/
 /plugins/formidable/
+/plugins/gravityforms/
 
 # Uploads
 /uploads/
