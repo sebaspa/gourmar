@@ -1,6 +1,7 @@
 export default class LeaftleftFindUs {
   constructor() {
     this.init();
+    console.log('gourmar', gourmar);
   }
 
   init() {
@@ -14,9 +15,7 @@ export default class LeaftleftFindUs {
 
     // Define custom icon for markers
     var customIcon = L.icon({
-      //iconUrl: `${gourmar.homeurl}/wp-content/themes/gourmar/images/marker.png`,
-      iconUrl:
-        "http://gourmar.local/wp-content/themes/gourmar/images/marker.png",
+      iconUrl: `${gourmar.homeurl}/wp-content/themes/gourmar/images/marker.png`,
       iconSize: [40, 49], // size of the icon
       iconAnchor: [20, 49], // point of the icon which will correspond to marker's location
       popupAnchor: [0, -50], // point from which the popup should open relative to the iconAnchor
@@ -27,7 +26,7 @@ export default class LeaftleftFindUs {
     (async () => {
       try {
         const response = await fetch(
-          "http://gourmar.local/wp-json/gourmar-api/v1/providers"
+          `${gourmar.apiurl}/providers`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
