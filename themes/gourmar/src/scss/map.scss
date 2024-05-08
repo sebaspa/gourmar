@@ -10,7 +10,8 @@
   @apply bg-gray-bg-500;
 }
 .markerPopup {
-  &__title {
+  &__title,
+  h3 {
     @apply text-primary-500 text-lg font-bold m-0 #{!important};
   }
 
