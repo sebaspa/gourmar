@@ -28,8 +28,13 @@ $recipeText = get_post_meta(get_the_ID(), 'gourmar_fields_recipe_recipeDescripti
 $shortDescription = get_post_meta(get_the_ID(), 'gourmar_fields_recipe_shortDescription', true);
 ?>
 
-<div class="container max-w-7xl mx-auto px-4 py-12">
-  <div class="grid grid-cols-12 gap-8 mb-12 md:mb-16">
+<div class="container max-w-7xl mx-auto px-4 my-12">
+  <div class="flex mb-4">
+    <a href="<?php echo esc_url(get_home_url() . '/blog'); ?>" class="btn btn-primary">
+      <?php echo __('Volver', 'gourmar') ?>
+    </a>
+  </div>
+  <div class="grid grid-cols-12 gap-x-0 md:gap-x-8 gap-y-8 mb-12 md:mb-16">
     <div class="col-span-12 lg:col-span-8">
       <div class="relative w-full bg-gray-bg-500 min-h-[200px] md:min-h[600px]">
         <img src="<?php echo get_template_directory_uri() . '/images/animate-loading.gif' ?>" alt="loading" width="200"
