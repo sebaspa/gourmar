@@ -23,6 +23,7 @@ export default class LeaftleftFindUs {
     });
 
     // Define providers
+    let providersList = [];
     (async () => {
       try {
         const response = await fetch(
@@ -31,7 +32,8 @@ export default class LeaftleftFindUs {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         } else {
-          addMarkers(await response.json());
+          providersList = await response.json();
+          await addMarkers(providersList);
         }
       } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
@@ -90,27 +92,21 @@ export default class LeaftleftFindUs {
     // Function to search for providers by name and center the map on the first matching provider
     function searchProviders(query) {
       clearMarkers();
-      for (var country in countryProviders) {
-        var providers = countryProviders[country];
-        if (providers) {
-          for (var i = 0; i < providers.length; i++) {
-            var provider = providers[i];
-            if (provider.name.toLowerCase().indexOf(query) !== -1) {
-              var marker = L.marker(provider.location, {
-                icon: customIcon,
-              }).addTo(map);
-              marker.bindPopup(`
+      providersList.forEach(function (provider) {
+        if (provider.name.toLowerCase().indexOf(query) !== -1) {
+          var marker = L.marker(provider.cooridinates.split(","), {
+            icon: customIcon,
+          }).addTo(map);
+          marker.bindPopup(`
                 <div class="markerPopup">
                   <h3>${provider.name}</h3>
                   <p>${provider.info}</p>
                 </div>
               `);
-              map.setView(provider.location, 10); // Change the zoom level as needed
-              return; // Stop searching after finding the first matching provider
-            }
-          }
+          map.setView(provider.cooridinates.split(","), 10); // Change the zoom level as needed
+          return; // Stop searching after finding the first matching provider
         }
-      }
+      });
     }
   }
 }
