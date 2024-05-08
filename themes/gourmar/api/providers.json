@@ -1,0 +1,62 @@
+[
+  {
+    "id": 884,
+    "name": "Gali Foods SRL",
+    "cooridinates": "18.545796795969387, -70.03906505444688",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: Parque industrial Duarte, Puerta 2, Autopista Duarte km 22 1\/2, Santo Domingo Oeste<\/li>\r\n \t<li>Tel\u00e9fono: +1 809-536-7200<\/li>\r\n   <\/ul>\r\n<\/div>"
+  },
+  {
+    "id": 882,
+    "name": "Pedersen Fine Foods S.A.",
+    "cooridinates": "9.026601434585094, -79.48740857476058",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: Edificio Pedersen Fine Foods, V\u00eda Cincuentenario, Rep de Panam\u00e1<\/li>\r\n \t<li>Tel\u00e9fono: +507 222-2555<\/li>\r\n \t<li>Web: https:\/\/pedersenfinefoods.com\/<\/li>\r\n   <\/ul>\r\n<\/div>"
+  },
+  {
+    "id": 878,
+    "name": "Magna, S.A",
+    "cooridinates": "12.108815620397348, -86.29275637472482",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: Pista Suburbana del Centro de Salud San Judas 2c Oeste y 1.5c al Sur, Nicaragua.<\/li>\r\n \t<li>Tel\u00e9fono: +505 2260-3363<\/li>\r\n   <\/ul>\r\n<\/div>"
+  },
+  {
+    "id": 877,
+    "name": "Didac Foods",
+    "cooridinates": "15.513896988602552, -88.03450953234535",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: Barrio El Play\u00f3n, 25 Calle, 11 y 15 Avenida N.O., San Pedro Sula, Honduras<\/li>\r\n \t<li>Tel\u00e9fono: +504 2570-0246<\/li>\r\n \t<li>Web: https:\/\/meatstorehn.com\/<\/li>\r\n   <\/ul>\r\n<\/div>"
+  },
+  {
+    "id": 876,
+    "name": "Comercial Albin",
+    "cooridinates": "14.612902444005083, -90.51922451886804",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: Carretera al Puerto de La Libertad, Pol\u00edgono M # 6 y 8, Residencial Utila, Santa Tecla, La Libertad<\/li>\r\n \t<li>Tel\u00e9fono: +502 2331-2450<\/li>\r\n   <\/ul>\r\n<\/div>"
+  },
+  {
+    "id": 875,
+    "name": "Alimentos Congelados",
+    "cooridinates": "13.669945740367305, -89.26492115884041",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: Carretera al Puerto de La Libertad, Pol\u00edgono M # 6 y 8, Residencial Utila, Santa Tecla, La Libertad<\/li>\r\n \t<li>Tel\u00e9fono: +503 2288-2065<\/li>\r\n   <\/ul>\r\n<\/div>"
+  },
+  {
+    "id": 873,
+    "name": "DatuGourmet Ltd",
+    "cooridinates": "-1.7587865226080728, -78.7558867036396",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: E35 y Pasaje Pana Norte1 ubicados en el sector Oyambaro C\u00f3digo postal plaza San Jos\u00e9<\/li>\r\n \t<li>Tel\u00e9fono: +593 96-427-8300<\/li>\r\n \t<li>Web: https:\/\/datugourmet.com\/<\/li>\r\n   <\/ul>\r\n<\/div>"
+  },
+  {
+    "id": 868,
+    "name": "Delika Gourmet Imports",
+    "cooridinates": "9.963156382637129, -84.20384949230505",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: Ofibodegas del Oeste, Local 53, Calle Potrerillos, San Rafael de Alajuela<\/li>\r\n \t<li>Tel\u00e9fono: +506 2239-1019<\/li>\r\n \t<li>Web: https:\/\/www.delika.cr\/<\/li>\r\n   <\/ul>\r\n<\/div>"
+  },
+  {
+    "id": 865,
+    "name": "The Eight Continent Inc",
+    "cooridinates": "12.526156089674213, -70.04477426307886",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: TEC ARUBA, Arndstraat 103, Aruba<\/li>\r\n \t<li>Tel\u00e9fono: +297 582-1304<\/li>\r\n \t<li>Web: https:\/\/tecaruba.com\/<\/li>\r\n   <\/ul>\r\n<\/div>"
+  },
+  {
+    "id": 861,
+    "name": "Desinco Limited",
+    "cooridinates": "6.771236079238342, -58.16466033245182",
+    "info": "<div class=\"markerPopup__info\">\r\n   <ul>\r\n \t<li>Direcci\u00f3n: Lot 47-48 Industrial Site Eccles, East Bank Demerara, Guyana<\/li>\r\n \t<li>Tel\u00e9fono: +592 226-7109<\/li>\r\n \t<li>Web: https:\/\/desincogy.com\/<\/li>\r\n   <\/ul>\r\n<\/div>"
+  }
+]
