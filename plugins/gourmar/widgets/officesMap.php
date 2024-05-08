@@ -1,4 +1,4 @@
-<?
+<?php
 class OfficesMap extends WP_Widget
 {
   public function __construct()
@@ -20,7 +20,7 @@ class OfficesMap extends WP_Widget
         <div id="mapOffices" class="w-full h-[400px]"></div>
       </main>
     </div>
-    <?
+    <?php
   }
 
   public function form($instance)

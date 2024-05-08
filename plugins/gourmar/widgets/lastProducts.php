@@ -38,8 +38,6 @@ class lastProducts extends WP_Widget
           $products->the_post();
           // Get product data
           $product_id = get_the_ID();
-          $product = wc_get_product($product_id);
-
           // Display product details
           if (has_post_thumbnail($product_id)):
             $product_image = get_the_post_thumbnail_url($product_id);
