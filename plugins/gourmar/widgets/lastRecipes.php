@@ -64,7 +64,7 @@ class lastRecipes extends WP_Widget
                   <p class="cardRecipe__category"><?php echo $recipeCategory[0]->name; ?></p>
                 </div>
                 <div class="cardRecipe__separator"></div>
-                <p class="cardRecipe__description"><?php echo $shortDescription ?></p>
+                <p class="cardRecipe__description"><?php echo mb_substr($shortDescription, 0, 100) . '...'; ?></p>
               </div>
             </div>
           <?php endforeach;

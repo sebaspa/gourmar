@@ -80,7 +80,7 @@ function gourmar_fields_recipe()
       'name' => esc_html__('Description', 'gourmar'),
       'desc' => esc_html__('Write a recipe.', 'gourmar'),
       'default' => '',
-      'sanitization_cb' => true,
+      'sanitization_cb' => false,
       'type' => 'wysiwyg',
       'attributes' => array(
         'required' => 'required',
