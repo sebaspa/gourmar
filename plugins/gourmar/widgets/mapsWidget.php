@@ -20,9 +20,21 @@ class customMapsWidget extends WP_Widget
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-12 md:col-span-5">
                     <select id="country-select" class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base">
-                        <option value="panama" selected>Panamá</option>
-                        <option value="nicaragua">Nicaragua</option>
-                        <option value="costarica">Costa Rica</option>
+                        <?php
+                        // Fetch countries data //
+                            $response = wp_remote_get('http://gourmar.local/wp-json/gourmar-api/v1/countries/');
+
+                            if (is_wp_error($response)) {
+                                echo 'Unable to fetch data: ' . $response->get_error_message();
+                            } else {
+                                $body = wp_remote_retrieve_body($response);
+                                $data = json_decode($body);
+
+                                foreach ($data as $country) {
+                                    echo '<option value="' . $country->name . '" coordinates="'.$country->coordinates.'">' . $country->name . '</option>';
+                                }
+                            }
+                        ?>
                         <!-- Add more options as needed -->
                     </select>
                     </div>

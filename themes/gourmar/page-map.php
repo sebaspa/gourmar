@@ -16,7 +16,7 @@ get_header();
 <main>
 <div id="map"></div>
     <input type="text" id="provider-search" placeholder="Search for provider">
-    <select id="country-select">
+    <select id="country-select_x">
         <option value="panama" selected>Panama</option>
         <option value="nicaragua">Nicaragua</option>
         <option value="costarica">Costa Rica</option>

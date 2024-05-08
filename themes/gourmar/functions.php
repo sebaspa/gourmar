@@ -160,5 +160,4 @@ function listCountriesApi($data)
   }
 
   echo json_encode($countriesJson);
-
 }

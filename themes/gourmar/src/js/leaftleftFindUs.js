@@ -1,159 +1,53 @@
 export default class LeaftleftFindUs {
   constructor() {
     this.init();
-    console.log("gourmar", gourmar);
   }
 
   init() {
     // Initialize Leaflet map
-    var map = L.map("map").setView([8.9824, -79.5199], 5); // Initial center and zoom level for Panamá
+    var map = L.map("map").setView([18.9097, -70.2573], 8); // Initial center and zoom level for RD
 
     // Add a tile layer from Mapbox (you can use any tile layer provider)
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors",
     }).addTo(map);
 
-    const countriesCoordinates = getCountries();
-    /*var countryCoordinates = {
-      costarica: [9.7489, -83.7534], // Costa Rica
-      nicaragua: [12.8654, -85.2072], // Nicaragua
-      panama: [8.9824, -79.5199], // Panama
-      // Add more countries and their coordinates as needed
-    };*/
-
     // Define custom icon for markers
     var customIcon = L.icon({
-      iconUrl: `${gourmar.homeurl}/wp-content/themes/gourmar/images/marker.png`,
+      //iconUrl: `${gourmar.homeurl}/wp-content/themes/gourmar/images/marker.png`,
+      iconUrl:
+        "http://gourmar.local/wp-content/themes/gourmar/images/marker.png",
       iconSize: [40, 49], // size of the icon
       iconAnchor: [20, 49], // point of the icon which will correspond to marker's location
       popupAnchor: [0, -50], // point from which the popup should open relative to the iconAnchor
     });
 
-    const getCountries = async () => {
-      const response = await fetch(
-        `${gourmar.homeurl}/wp-json/gourmar/v1/countries`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          return data;
-        });
-    };
-
-    //Get markers for each country
-    const getCountryMarkers = async () => {
-      const response = await fetch(
-        `${gourmar.homeurl}/wp-json/gourmar/v1/providers`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          return data;
-        });
-    };
-
-    // Define providers for each country
-    const countryProviders = getCountryMarkers();
-    /* var countryProviders = {
-      costarica: [
-        {
-          name: '<p class="markerPopup__title">Provider A</p>',
-          location: [9.7489, -83.7534],
-          info: `
-          <div class="markerPopup__info">
-            <ul>
-              <li>Address: 123 Main Street</li>
-              <li>City: Costarica city</li>
-              <li>Phone: (123) 456-7890</li>
-            </ul>
-          </div>
-          `,
-        },
-        {
-          name: '<p class="markerPopup__title">Provider B</p>',
-          location: [10.3157, -84.8227],
-          info: `
-          <div class="markerPopup__info">
-            <ul>
-              <li>Address: 123 Main Street</li>
-              <li>City: Costarica city</li>
-              <li>Phone: (123) 456-7890</li>
-            </ul>
-          </div>
-          `,
-        },
-        // Add more providers for Costa Rica
-      ],
-      nicaragua: [
-        {
-          name: '<p class="markerPopup__title">Provider 1</p>',
-          location: [12.8654, -85.2072],
-          info: `
-          <div class="markerPopup__info">
-            <ul>
-              <li>Address: 123 Main Street</li>
-              <li>City: Nicaragua city</li>
-              <li>Phone: (123) 456-7890</li>
-            </ul>
-          </div>
-          `,
-        },
-        {
-          name: '<p class="markerPopup__title">Provider 2</p>',
-          location: [11.8251, -85.9083],
-          info: `
-          <div class="markerPopup__info">
-            <ul>
-              <li>Address: 123 Main Street</li>
-              <li>City: Nicaragua city</li>
-              <li>Phone: (123) 456-7890</li>
-            </ul>
-          </div>
-          `,
-        },
-        // Add more providers for Nicaragua
-      ],
-      panama: [
-        {
-          name: '<p class="markerPopup__title">Provider X</p>',
-          location: [8.9824, -79.5199],
-          info: `
-          <div class="markerPopup__info">
-            <ul>
-              <li>Address: 123 Main Street</li>
-              <li>City: Panamá</li>
-              <li>Phone: (123) 456-7890</li>
-            </ul>
-          </div>
-        `,
-        },
-        {
-          name: '<p class="markerPopup__title">Provider Y</div>',
-          location: [9.1018, -79.4029],
-          info: `
-          <div class="markerPopup__info">
-            <ul>
-              <li>Address: 123 Main Street</li>
-              <li>City: Panamá</li>
-              <li>Phone: (123) 456-7890</li>
-            </ul>
-          </div>
-          `,
-        },
-        // Add more providers for Panama
-      ],
-      // Add more countries and their providers as needed
-    };*/
-
-    //Load first markers//
-    addMarkers("panama");
+    // Define providers
+    (async () => {
+      try {
+        const response = await fetch(
+          "http://gourmar.local/wp-json/gourmar-api/v1/countries/"
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        } else {
+          addMarkers(await response.json());
+        }
+      } catch (error) {
+        console.error("There was a problem with the fetch operation:", error);
+      }
+    })();
 
     // Event listener for the dropdown menu change
     document
       .getElementById("country-select")
       .addEventListener("change", function () {
-        var selectedCountry = this.value;
-        centerMapOnCountry(selectedCountry);
-        clearMarkers();
-        addMarkers(selectedCountry);
+        const selectedCountry = this.value;
+        const selectedOption = this.options[this.selectedIndex];
+        const selectedCoordinates = selectedOption
+          .getAttribute("coordinates")
+          .split(",");
+        map.setView(selectedCoordinates, 6); // Change the zoom level as needed
       });
 
     // Event listener for the provider search
@@ -166,20 +60,21 @@ export default class LeaftleftFindUs {
 
     // Function to center the map based on selected country
     function centerMapOnCountry(countryCode) {
+      console.log("centermap");
       map.setView(countryCoordinates[countryCode], 6); // Change the zoom level as needed
     }
 
     // Function to add markers for providers in the selected country
-    function addMarkers(countryCode) {
-      var providers = countryProviders[countryCode];
+    function addMarkers(providers) {
       if (providers) {
         providers.forEach(function (provider) {
-          var marker = L.marker(provider.location, { icon: customIcon }).addTo(
+          var marker = L.marker(provider.coordinates.split(','), { icon: customIcon }).addTo(
             map
           );
+          console.log(provider);
           marker.bindPopup("<b>" + provider.name + "</b><br>" + provider.info);
           marker.on("click", function () {
-            map.setView(provider.location, 10); // Change the zoom level as needed
+            map.setView(provider.coordinates.split(','), 10); // Change the zoom level as needed
           });
         });
       }
