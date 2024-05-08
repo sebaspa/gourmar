@@ -10,8 +10,8 @@
       ajaxurl: '<?php echo admin_url('admin-ajax.php'); ?>',
       homeurl: '<?php echo esc_url(home_url('/')); ?>',
       nonce: '<?php echo wp_create_nonce('wp_rest'); ?>',
-      lang: '<?php echo get_locale(); ?>'
-      apiurl: '<?php echo esc_url(home_url('/wp-json/gourmar-api/v1'));?>',
+      lang: '<?php echo get_locale(); ?>',
+      apiurl: '<?php echo esc_url(home_url('/wp-json/gourmar-api/v1')); ?>',
     }
   </script>
 </head>
