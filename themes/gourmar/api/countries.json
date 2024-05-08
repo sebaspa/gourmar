@@ -1,0 +1,52 @@
+[
+  {
+    "id": 853,
+    "name": "Rep\u00fablica dominicana",
+    "coordinates": "18.9097, -70.2573"
+  },
+  {
+    "id": 851,
+    "name": "Honduras",
+    "coordinates": "14.8396, -86.9205"
+  },
+  {
+    "id": 849,
+    "name": "Guatemala",
+    "coordinates": "14.6547, -90.5198"
+  },
+  {
+    "id": 847,
+    "name": "El salvador",
+    "coordinates": "13.7027, -89.2133"
+  },
+  {
+    "id": 846,
+    "name": "Ecuador",
+    "coordinates": "-1.4643, -78.5349"
+  },
+  {
+    "id": 845,
+    "name": "Aruba",
+    "coordinates": "12.5116, -69.9799"
+  },
+  {
+    "id": 818,
+    "name": "Guyana",
+    "coordinates": "4.8311, -59.0135"
+  },
+  {
+    "id": 817,
+    "name": "Jamaica",
+    "coordinates": "18.1599, -77.3614"
+  },
+  {
+    "id": 816,
+    "name": "Antigua y barbuda",
+    "coordinates": "17.0774, -61.8001"
+  },
+  {
+    "id": 768,
+    "name": "Nicaragua",
+    "coordinates": "12.8654, -85.2072"
+  }
+]
