@@ -26,7 +26,7 @@ export default class LeaftleftFindUs {
     (async () => {
       try {
         const response = await fetch(
-          "http://gourmar.local/wp-json/gourmar-api/v1/countries/"
+          "http://gourmar.local/wp-json/gourmar-api/v1/providers"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -60,7 +60,6 @@ export default class LeaftleftFindUs {
 
     // Function to center the map based on selected country
     function centerMapOnCountry(countryCode) {
-      console.log("centermap");
       map.setView(countryCoordinates[countryCode], 6); // Change the zoom level as needed
     }
 
@@ -68,13 +67,12 @@ export default class LeaftleftFindUs {
     function addMarkers(providers) {
       if (providers) {
         providers.forEach(function (provider) {
-          var marker = L.marker(provider.coordinates.split(','), { icon: customIcon }).addTo(
-            map
-          );
-          console.log(provider);
+          var marker = L.marker(provider.cooridinates.split(","), {
+            icon: customIcon,
+          }).addTo(map);
           marker.bindPopup("<b>" + provider.name + "</b><br>" + provider.info);
           marker.on("click", function () {
-            map.setView(provider.coordinates.split(','), 10); // Change the zoom level as needed
+            map.setView(provider.cooridinates.split(","), 10); // Change the zoom level as needed
           });
         });
       }
