@@ -1,9 +1,9 @@
 <footer class="py-6 lg:py-14 w-full bg-primary-500">
   <div class="container max-w-7xl ">
     <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-12 lg:col-span-6">
-        <?php the_custom_logo(); ?>
-        <p class="text-white text-xs font-adelica-brush mb-5 md:mb-0">Seguridad y calidad son nuestra prioridad</p>
+      <div class="col-span-12 lg:col-span-7">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/logo-footer.png" alt="gourmar" loading="lazy" />
+        <p class="text-white text-xs font-adelica-brush mt-1 mb-5 md:mb-0">Seguridad y calidad son nuestra prioridad</p>
         <?php
         wp_nav_menu(
           array(
@@ -13,7 +13,7 @@
         );
         ?>
       </div>
-      <div class="col-span-12 lg:col-span-6">
+      <div class="col-span-12 lg:col-span-5">
         <h4 class="text-white font-novecento uppercase text-lg mb-5">Información de contacto</h4>
         <ul class="text-white text-base [&>li]:mb-3 [&>li]:flex [&>li]:items-center">
           <li>
@@ -56,6 +56,7 @@
       </div>
       <div class="col-span-12 md:col-span-3 order-1 md:order-2">
         <div class="flex items-center gap-4 justify-center md:justify-end text-white">
+          <!--
           <a href="#" target="_blank" rel="noopener noreferrer" title="Twitter">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" fill="none">
               <path fill="currentColor"
@@ -68,13 +69,15 @@
                 d="M21.656 11.322c0 5.328-3.91 9.754-9.023 10.528v-7.434h2.492l.473-3.094h-2.965V9.346c0-.86.43-1.676 1.762-1.676h1.332V5.049s-1.204-.215-2.407-.215c-2.406 0-3.996 1.504-3.996 4.168v2.32H6.617v3.094h2.707v7.434c-5.113-.774-8.98-5.2-8.98-10.528C.344 5.436 5.114.666 11 .666c5.887 0 10.656 4.77 10.656 10.656Z" />
             </svg>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" title="Instagram">
+      -->
+          <a href="https://www.instagram.com/gourmarsalmon?igsh=MTQzOTd2dzUyOTRueg==" target="_blank"
+            rel="noopener noreferrer" title="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="none">
               <path fill="currentColor"
                 d="M10.625 5.38c2.707 0 4.941 2.235 4.941 4.942a4.942 4.942 0 0 1-4.941 4.942 4.915 4.915 0 0 1-4.941-4.942 4.942 4.942 0 0 1 4.941-4.941Zm0 8.165c1.762 0 3.18-1.418 3.18-3.223a3.173 3.173 0 0 0-3.18-3.18c-1.805 0-3.223 1.419-3.223 3.18a3.218 3.218 0 0 0 3.223 3.223Zm6.273-8.336c0-.645-.515-1.16-1.16-1.16-.644 0-1.16.515-1.16 1.16 0 .645.516 1.16 1.16 1.16.645 0 1.16-.515 1.16-1.16Zm3.266 1.16c.086 1.59.086 6.36 0 7.95-.086 1.546-.43 2.878-1.547 4.038-1.117 1.118-2.492 1.461-4.039 1.547-1.59.086-6.36.086-7.95 0-1.546-.086-2.878-.43-4.038-1.547-1.117-1.16-1.461-2.492-1.547-4.039-.086-1.59-.086-6.359 0-7.949.086-1.547.43-2.922 1.547-4.039C3.75 1.213 5.082.87 6.629.783c1.59-.086 6.36-.086 7.95 0 1.546.086 2.921.43 4.038 1.547 1.117 1.117 1.461 2.492 1.547 4.04Zm-2.062 9.625c.515-1.246.386-4.254.386-5.672 0-1.375.13-4.383-.386-5.672-.344-.816-.989-1.504-1.805-1.804-1.29-.516-4.297-.387-5.672-.387-1.418 0-4.426-.129-5.672.387A3.314 3.314 0 0 0 3.105 4.65c-.515 1.29-.386 4.297-.386 5.672 0 1.418-.13 4.426.386 5.672.344.86.989 1.504 1.848 1.848 1.246.515 4.254.387 5.672.387 1.375 0 4.383.128 5.672-.387.816-.344 1.504-.988 1.805-1.848Z" />
             </svg>
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" title="Youtube">
+          <a href="https://www.youtube.com/@Gourmarsalmon" target="_blank" rel="noopener noreferrer" title="Youtube">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="17" fill="none">
               <path fill="currentColor"
                 d="M23.59 2.693c.515 1.805.515 5.672.515 5.672s0 3.825-.515 5.672a2.866 2.866 0 0 1-2.063 2.063c-1.847.472-9.152.472-9.152.472s-7.348 0-9.195-.472a2.866 2.866 0 0 1-2.063-2.063C.602 12.19.602 8.365.602 8.365s0-3.867.515-5.672C1.375 1.663 2.191.846 3.18.588 5.027.072 12.375.072 12.375.072s7.305 0 9.152.516c.989.258 1.805 1.074 2.063 2.105ZM9.969 11.846l6.101-3.48L9.97 4.884v6.96Z" />

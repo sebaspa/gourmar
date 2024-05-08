@@ -35,8 +35,15 @@ $wrapper_classes = apply_filters(
     'images',
   )
 );
+
 ?>
-<div class="<?php echo esc_attr(implode(' ', array_map('sanitize_html_class', $wrapper_classes))); ?>"
+<div class="flex w-full">
+
+  <a href="<?php echo esc_url(get_home_url() . '/products'); ?>" class="btn btn-primary">
+    <?php echo __('Ver más productos', 'gourmar') ?>
+  </a>
+</div>
+<div class="<?php echo esc_attr(implode(' ', array_map('sanitize_html_class', $wrapper_classes))); ?> bg-gray-bg-500"
   data-columns="<?php echo esc_attr($columns); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
   <div class="woocommerce-product-gallery__wrapper bg-gray-bg-500">
     <?php
