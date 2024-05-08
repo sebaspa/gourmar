@@ -45,12 +45,12 @@ class customMapsWidget extends WP_Widget
             <!-- Add more options as needed -->
           </select>
         </div>
-        <div class="col-span-12 md:col-span-4">
+        <div class="col-span-12 md:col-span-5">
           <input type="text" id="provider-search" placeholder="Buscar distribuidor..."
             class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base">
         </div>
         <!-- Button  -->
-        <div class="col-span-12 md:col-span-3">
+        <div class="col-span-12 md:col-span-2">
           <button id="filter-products-btn"
             class="bg-primary-500 text-white uppercase text-base rounded-full px-6 py-3 flex items-center gap-3">
             <span>Buscar</span>

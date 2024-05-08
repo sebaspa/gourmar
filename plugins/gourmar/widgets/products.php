@@ -89,12 +89,12 @@ class productsWidget extends WP_Widget
                 <p>No categories found.</p>
               <?php endif; ?>
             </div>
-            <div class="col-span-12 md:col-span-4">
+            <div class="col-span-12 md:col-span-5">
               <input type="text" name="productSearch" id="productSearch" value="<?php echo $productSearch; ?>"
                 class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base"
                 placeholder="Buscar artículo...">
             </div>
-            <div class="col-span-12 md:col-span-3">
+            <div class="col-span-12 md:col-span-2">
               <button type="submit"
                 class="bg-primary-500 text-white uppercase text-base rounded-full px-6 py-3 flex items-center gap-3">
                 <span>Buscar</span>
@@ -111,7 +111,7 @@ class productsWidget extends WP_Widget
         <div id="product-list"></div>
       </div>
       <div class="container mx-auto max-w-7xl px-4">
-        <div class="grid grid-cols-12 gap-8">
+        <div class="grid grid-cols-12 gap-8 md:gap-10">
           <?php if ($products->have_posts()): ?>
             <?php while ($products->have_posts()):
               $products->the_post(); ?>

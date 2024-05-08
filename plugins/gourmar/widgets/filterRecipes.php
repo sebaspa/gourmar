@@ -75,12 +75,12 @@ class filterRecipes extends WP_Widget
                 <?php endforeach; ?>
               </select>
             </div>
-            <div class="col-span-12 md:col-span-4">
+            <div class="col-span-12 md:col-span-5">
               <input type="text" name="recipeSearch" id="recipeSearch" placeholder="Buscar artículo..."
                 value="<?php echo $recipeSearch; ?>"
                 class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base" />
             </div>
-            <div class="col-span-12 md:col-span-3">
+            <div class="col-span-12 md:col-span-2">
               <button class="bg-primary-500 text-white uppercase text-base rounded-full px-6 py-3 flex items-center gap-3"
                 type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 512" width="16" class="text-white">
@@ -95,7 +95,7 @@ class filterRecipes extends WP_Widget
       </div>
     </div>
     <div class="container max-w-7xl mx-auto px-4 py-8 md:py-20">
-      <div class="grid grid-cols-12 gap-4 md:gap-8 mb-16">
+      <div class="grid grid-cols-12 gap-x-0 gap-y-4 md:gap-10 mb-16">
         <?php if ($recipes->posts): ?>
           <?php foreach ($recipes->posts as $recipe): ?>
             <div class="col-span-12 md:col-span-6 lg:col-span-4">
@@ -127,7 +127,7 @@ class filterRecipes extends WP_Widget
                   <p class="cardRecipe__category"><?php echo $recipeCategory[0]->name; ?></p>
                 </div>
                 <div class="cardRecipe__separator"></div>
-                <p class="cardRecipe__description"><?php echo $shortDescription ?></p>
+                <p class="cardRecipe__description"><?php echo mb_substr($shortDescription, 0, 100) . '...'; ?></p>
               </div>
             </div>
           <?php endforeach;
