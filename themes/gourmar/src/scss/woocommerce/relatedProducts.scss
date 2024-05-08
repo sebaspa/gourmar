@@ -1,0 +1,13 @@
+.relatedProducts {
+  .button {
+    @apply bg-primary-500;
+  }
+}
+
+.woocommerce ul.products li.product .button {
+  @apply bg-primary-500 text-white py-3 px-6;
+}
+
+.woocommerce-loop-product__title {
+  @apply text-black-500;
+}

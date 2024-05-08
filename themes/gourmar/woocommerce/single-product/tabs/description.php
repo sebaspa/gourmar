@@ -27,6 +27,6 @@ $heading = apply_filters('woocommerce_product_description_heading', __('Descript
   <h2 class="font-adelica-brush text-2xl md:text-4xl text-primary-500 mb-6 md:mb-10"><?php echo esc_html($heading); ?>
   </h2>
 <?php endif; ?>
-<div class="w-full prose">
+<div class="w-full text-base text-black-500">
   <?php the_content(); ?>
 </div>

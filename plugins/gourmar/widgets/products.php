@@ -111,7 +111,7 @@ class productsWidget extends WP_Widget
         <div id="product-list"></div>
       </div>
       <div class="container mx-auto max-w-7xl px-4">
-        <div class="grid grid-cols-12 gap-4">
+        <div class="grid grid-cols-12 gap-8">
           <?php if ($products->have_posts()): ?>
             <?php while ($products->have_posts()):
               $products->the_post(); ?>
@@ -128,7 +128,7 @@ class productsWidget extends WP_Widget
                 </a>
                 <p class="productCard__category"><?php echo getCategories(get_the_ID()); ?></p>
                 <p class="productCard__title"><?php the_title(); ?></p>
-                <p class="productCard__description"><?php echo $product->get_short_description(); ?></p>
+                <p class="productCard__description"><?php echo mb_substr($product->get_short_description(), 0, 100); ?>...</p>
               </div>
             <?php endwhile;
             wp_reset_postdata(); ?>
@@ -138,7 +138,7 @@ class productsWidget extends WP_Widget
             </div>
           <?php endif; ?>
         </div>
-        <div class="pagination py-10">
+        <div class="pagination py-12">
           <?php
           echo paginate_links(
             array(
