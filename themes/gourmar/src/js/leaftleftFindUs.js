@@ -1,12 +1,11 @@
 export default class LeaftleftFindUs {
   constructor() {
     this.init();
-    console.log('gourmar', gourmar);
   }
 
   init() {
     // Initialize Leaflet map
-    var map = L.map("map").setView([18.9097, -70.2573], 8); // Initial center and zoom level for RD
+    var map = L.map("map").setView([8.986791944526546, -79.52523636079269], 8); // Initial center and zoom level for RD
 
     // Add a tile layer from Mapbox (you can use any tile layer provider)
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {

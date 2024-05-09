@@ -2,7 +2,8 @@
   <div class="container max-w-7xl ">
     <div class="grid grid-cols-12 gap-4">
       <div class="col-span-12 lg:col-span-7">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo-footer.png" alt="gourmar" loading="lazy" />
+        <img src="<?php echo get_template_directory_uri(); ?>/images/logo-footer.png" alt="gourmar" loading="lazy"
+          width="250" height="68" />
         <p class="text-white text-xs font-adelica-brush mt-1 mb-5 md:mb-0">Seguridad y calidad son nuestra prioridad</p>
         <?php
         wp_nav_menu(
