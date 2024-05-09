@@ -16,8 +16,8 @@ class OfficesMap extends WP_Widget
   {
     ?>
     <div class="bg-gray-bg-500 w-full">
-      <main class="container mx-auto max-w-7xl px-4">
-        <div id="mapOffices" class="w-full h-[400px]"></div>
+      <main class="container mx-auto max-w-7xl px-4" id="findusMap">
+        <div id="map" class="w-full h-[400px]"></div>
       </main>
     </div>
     <?php
