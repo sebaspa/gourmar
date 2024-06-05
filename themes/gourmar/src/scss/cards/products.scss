@@ -47,6 +47,7 @@
     @apply h-72 bg-gray-bg-500 relative;
     img {
       @apply w-full object-cover h-72 #{!important};
+      border: 1px solid #ccc !important;
     }
 
     &--bullet {

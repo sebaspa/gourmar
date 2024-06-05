@@ -12,3 +12,7 @@ License URI: LICENSE
 Text Domain: gourmar
 Tags: custom-logo, custom-menu, featured-images, translation-ready
 */
+
+.productCard__image img {
+    border: 1px solid #ccc;
+}
