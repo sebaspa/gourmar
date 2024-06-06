@@ -28,4 +28,16 @@ function gourmar_fields_country()
     )
   );
 
+  $cmb->add_field(
+    array(
+      'name' => esc_html__('Flag', 'gourmar'),
+      'id' => $prefix . 'flag',
+      'show_in_rest' => true,
+      'type' => 'text',
+      'attributes' => array(
+        'required' => 'required',
+      )
+    )
+  );
+
 }

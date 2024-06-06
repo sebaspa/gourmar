@@ -51,12 +51,12 @@ export default class LeaftleftFindUs {
       });
 
     // Event listener for the provider search
-    document
+    /*document
       .getElementById("provider-search")
       .addEventListener("input", function () {
         var searchQuery = this.value.trim().toLowerCase();
         searchProviders(searchQuery);
-      });
+      });*/
 
     // Function to center the map based on selected country
     function centerMapOnCountry(countryCode) {

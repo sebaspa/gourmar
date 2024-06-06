@@ -24,30 +24,75 @@ class customMapsWidget extends WP_Widget
       )
     );
     ?>
-    <div class="container mx-auto py-12 max-w-5xl px-4">
+    <style>
+      #findusMap {
+        position: relative;
+        z-index: 1;
+      }
+
+      #findUsSearch {
+        position: relative;
+        z-index: 2;
+      }
+
+      #country-select {
+        position: relative;
+        display: inline-block;
+        background-color: #fff;
+      }
+
+      .select-selected {
+        padding: 0px;
+        cursor: pointer;
+        background-color: #fff;
+      }
+
+      .select-items {
+        display: none;
+        position: absolute;
+        min-width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 9;
+        background-color: #fff;
+      }
+
+      .country-option {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        cursor: pointer;
+        background-color: #fff;
+      }
+
+      .show{
+        display: block;
+      }
+    </style>
+    <div class="container mx-auto py-12 max-w-5xl px-4" id="findUsSearch">
       <div class="grid grid-cols-12 gap-4">
         <div class="col-span-12 md:col-span-5">
-          <select id="country-select"
-            class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base">
-            <option value="">Selecciona</option>
-            <?php
-            while ($countries->have_posts()):
-              $countries->the_post();
-              ?>
-              <option value="<?php echo get_the_title(); ?>"
-                coordinates="<?php echo get_post_meta(get_the_ID(), 'gourmar_fields_country_coordinates', true); ?>">
-                <?php echo get_the_title(); ?>
-              </option>
+          <div id="country-select" class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base">
+            <div value="" class="select-selected">Selecciona</div>
+            <div class="select-items">
               <?php
-            endwhile;
-            wp_reset_postdata();
-            ?>
-            <!-- Add more options as needed -->
-          </select>
-        </div>
-        <div class="col-span-12 md:col-span-5">
-          <input type="text" id="provider-search" placeholder="Buscar distribuidor..."
-            class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base">
+              while ($countries->have_posts()):
+                $countries->the_post();
+                ?>
+                <div value="<?php echo get_the_title(); ?>"
+                  coordinates="<?php echo get_post_meta(get_the_ID(), 'gourmar_fields_country_coordinates', true); ?>"
+                  class="country-option">
+                  <img width="24" height="auto"
+                    src="<?php echo get_post_meta(get_the_ID(), 'gourmar_fields_country_flag', true); ?>"
+                    alt="<?php echo get_the_title(); ?>">
+                  <?php echo get_the_title(); ?>
+                </div>
+                <?php
+              endwhile;
+              wp_reset_postdata();
+              ?>
+            </div>
+          </div>
         </div>
         <!-- Button  -->
         <div class="col-span-12 md:col-span-2">
@@ -65,6 +110,33 @@ class customMapsWidget extends WP_Widget
     <main class="container mx-auto max-w-7xl px-4" id="findusMap">
       <div id="map" class="w-full h-[400px]"></div>
     </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var select = document.querySelector("#country-select");
+        var selectSelected = select.querySelector(".select-selected");
+        var selectItems = select.querySelector(".select-items");
+
+        // Toggle dropdown when selected item is clicked
+        selectSelected.addEventListener("click", function () {
+          selectItems.classList.toggle("show");
+        });
+
+        // Close dropdown when clicking outside of it
+        window.addEventListener("click", function (e) {
+          if (!select.contains(e.target)) {
+            selectItems.classList.remove("show");
+          }
+        });
+
+        // Handle selection of dropdown items
+        selectItems.querySelectorAll("div").forEach(function (item) {
+          item.addEventListener("click", function () {
+            selectSelected.textContent = item.textContent;
+            selectItems.classList.remove("show");
+          });
+        });
+      });
+    </script>
     <?php
   }
 
