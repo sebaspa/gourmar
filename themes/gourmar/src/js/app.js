@@ -15,7 +15,7 @@ jQuery(function () {
     new Carousels().carousel2Init()
   }
 
-  if (jQuery("#findusMap").length > 0) {
+  if (jQuery("#findUsSearch").length > 0) {
     new LeaftleftFindUs();
   }
 })

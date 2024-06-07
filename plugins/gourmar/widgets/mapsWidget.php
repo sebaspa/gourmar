@@ -50,14 +50,20 @@ class customMapsWidget extends WP_Widget
       .select-items {
         display: none;
         position: absolute;
-        min-width: 100%;
-        max-height: 200px;
-        overflow-y: auto;
-        z-index: 9;
         background-color: #fff;
+        max-height: 200px;
+        width: calc(100% + 2px);
+        margin-left: -17px;
+        overflow-y: auto;
+        border: 1px solid #001489;
+        border-top: none;
+        border-radius: 0 0 0px 10px;
+        z-index: 1;
+        scrollbar-width: thin;
       }
 
       .country-option {
+        padding: 10px;
         display: flex;
         flex-direction: row;
         gap: 10px;
@@ -65,7 +71,7 @@ class customMapsWidget extends WP_Widget
         background-color: #fff;
       }
 
-      .show{
+      .show {
         display: block;
       }
     </style>
@@ -110,33 +116,6 @@ class customMapsWidget extends WP_Widget
     <main class="container mx-auto max-w-7xl px-4" id="findusMap">
       <div id="map" class="w-full h-[400px]"></div>
     </main>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var select = document.querySelector("#country-select");
-        var selectSelected = select.querySelector(".select-selected");
-        var selectItems = select.querySelector(".select-items");
-
-        // Toggle dropdown when selected item is clicked
-        selectSelected.addEventListener("click", function () {
-          selectItems.classList.toggle("show");
-        });
-
-        // Close dropdown when clicking outside of it
-        window.addEventListener("click", function (e) {
-          if (!select.contains(e.target)) {
-            selectItems.classList.remove("show");
-          }
-        });
-
-        // Handle selection of dropdown items
-        selectItems.querySelectorAll("div").forEach(function (item) {
-          item.addEventListener("click", function () {
-            selectSelected.textContent = item.textContent;
-            selectItems.classList.remove("show");
-          });
-        });
-      });
-    </script>
     <?php
   }
 

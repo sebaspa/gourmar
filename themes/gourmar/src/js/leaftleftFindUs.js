@@ -24,9 +24,7 @@ export default class LeaftleftFindUs {
     let providersList = [];
     (async () => {
       try {
-        const response = await fetch(
-          `${gourmar.apiurl}/providers`
-        );
+        const response = await fetch(`${gourmar.apiurl}/providers`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         } else {
@@ -39,29 +37,41 @@ export default class LeaftleftFindUs {
     })();
 
     // Event listener for the dropdown menu change
-    document
-      .getElementById("country-select")
-      .addEventListener("change", function () {
-        const selectedCountry = this.value;
-        const selectedOption = this.options[this.selectedIndex];
-        const selectedCoordinates = selectedOption
-          .getAttribute("coordinates")
-          .split(",");
-        map.setView(selectedCoordinates, 6); // Change the zoom level as needed
+    window.addEventListener("load", (event) => {
+      var select = document.querySelector("#country-select");
+      var selectSelected = select.querySelector(".select-selected");
+      var selectItems = select.querySelector(".select-items");
+      
+      // Toggle dropdown when selected item is clicked
+      selectSelected.addEventListener("click", function (e) {
+        e.stopPropagation();
+        selectItems.classList.toggle("show");
+        selectSelected.classList.toggle("select-arrow-active");
       });
 
-    // Event listener for the provider search
-    /*document
-      .getElementById("provider-search")
-      .addEventListener("input", function () {
-        var searchQuery = this.value.trim().toLowerCase();
-        searchProviders(searchQuery);
-      });*/
+      // Close dropdown when clicking outside of it
+      window.addEventListener("click", function () {
+        selectItems.classList.toggle("show");
+        selectSelected.classList.remove("select-arrow-active");
+      });
 
-    // Function to center the map based on selected country
-    function centerMapOnCountry(countryCode) {
-      map.setView(countryCoordinates[countryCode], 6); // Change the zoom level as needed
-    }
+      // Handle selection of dropdown items
+      selectItems.querySelectorAll(".country-option").forEach(function (item) {
+        item.addEventListener("click", function () {
+          selectSelected.setAttribute("value", item.getAttribute("value"));
+          selectSelected.setAttribute(
+            "coordinates",
+            item.getAttribute("coordinates")
+          );
+          selectSelected.classList.toggle("show");
+          selectSelected.classList.remove("select-arrow-active");
+          const selectedCoordinates = selectSelected
+            .getAttribute("coordinates")
+            .split(",");
+          map.setView(selectedCoordinates, 10); // Change the zoom level as needed
+        });
+      });
+    });
 
     // Function to add markers for providers in the selected country
     function addMarkers(providers) {
