@@ -16,20 +16,23 @@ class lastProducts extends WP_Widget
 
   public function widget($args, $instance)
   {
-    $numberPost = $instance['numberPost'];
+    $numberPost = !empty($instance['numberPost']) ? $instance['numberPost'] : 5; // Default to 5 if not set
 
-    // Display widget content
-
+    // Basic query to retrieve products
     $products = new WP_Query(
       array(
-        'paged' => get_query_var('paged', 1),
         'post_status' => 'publish',
         'posts_per_page' => $numberPost,
         'post_type' => 'product',
         'orderby' => 'date',
-        'order' => 'DESC',
+        'order' => 'DESC'
       )
     );
+
+    if (!$products->have_posts()) {
+      echo '<p>No products found.</p>';
+    }
+
     ?>
     <div class="grid grid-cols-12 gap-4">
       <?php
@@ -50,9 +53,18 @@ class lastProducts extends WP_Widget
                 <a class="cardLastProduct__content-btn" href="<?php echo get_permalink(); ?>">
                   →
                 </a>
-                <p class="cardLastProduct__category"><?php echo get_the_term_list($product_id, 'product_cat'); ?></p>
+                <p class="cardLastProduct__category"><?php echo get_the_term_list($product_id, 'product_cat', '', ', ', ''); ?>
+                </p>
                 <p class="cardLastProduct__title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></p>
               </div>
+            </div>
+            <?php
+          else:
+            ?>
+            <div class="col-span-12 sm:col-span-6 md:col-span-4 cardLastProduct">
+              <a href="<?php echo get_permalink(); ?>">
+                <p><?php the_title(); ?></p>
+              </a>
             </div>
             <?php
           endif;
@@ -63,6 +75,10 @@ class lastProducts extends WP_Widget
     </div>
     <?php
   }
+
+
+
+
 
   // Widget Update Method
   public function update($new_instance, $old_instance)

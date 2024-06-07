@@ -41,7 +41,7 @@ export default class LeaftleftFindUs {
       var select = document.querySelector("#country-select");
       var selectSelected = select.querySelector(".select-selected");
       var selectItems = select.querySelector(".select-items");
-      
+
       // Toggle dropdown when selected item is clicked
       selectSelected.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -56,7 +56,8 @@ export default class LeaftleftFindUs {
       });
 
       // Handle selection of dropdown items
-      selectItems.querySelectorAll(".country-option").forEach(function (item) {
+      const countryOptions = selectItems.querySelectorAll(".country-option");
+      countryOptions.forEach(function (item) {
         item.addEventListener("click", function () {
           selectSelected.setAttribute("value", item.getAttribute("value"));
           selectSelected.setAttribute(
