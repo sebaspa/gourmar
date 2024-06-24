@@ -12,6 +12,7 @@ module.exports = {
         'novecento-bold': ['Novecento Bold', 'sans-serif'],
         'novecento-light': ['Novecento Light', 'sans-serif'],
         'adelica-brush': ['Adelica Brush', 'sans-serif'],
+        'lato': ['Lato Regular', 'sans-serif'],
       },
       colors: {
         primary: {

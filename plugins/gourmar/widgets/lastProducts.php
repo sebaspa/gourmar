@@ -76,10 +76,6 @@ class lastProducts extends WP_Widget
     <?php
   }
 
-
-
-
-
   // Widget Update Method
   public function update($new_instance, $old_instance)
   {

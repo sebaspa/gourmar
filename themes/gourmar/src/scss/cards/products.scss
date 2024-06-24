@@ -13,7 +13,7 @@
   }
 
   &__category {
-    @apply text-white text-xs font-novecento uppercase mb-1;
+    @apply text-white text-xs font-lato uppercase mb-1;
   }
 
   &__title {
@@ -46,17 +46,17 @@
   &__image {
     @apply h-72 bg-gray-bg-500 relative;
     img {
-      @apply w-full object-cover h-72 #{!important};
+      @apply w-full object-contain md:object-cover h-72 #{!important};
       border: 1px solid #ccc !important;
     }
 
     &--bullet {
-      @apply absolute top-2 right-2 bg-yellow-500 text-primary-500 text-xs uppercase px-4 py-1 rounded-xl font-novecento;
+      @apply absolute top-2 right-2 bg-yellow-500 text-primary-500 text-xs uppercase px-4 py-1 rounded-xl font-lato;
     }
   }
 
   &__category {
-    @apply text-xs mb-2 mt-3 text-primary-500 font-novecento uppercase;
+    @apply text-xs mb-2 mt-3 text-primary-500 font-lato uppercase;
   }
 
   &__title {

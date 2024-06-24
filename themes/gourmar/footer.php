@@ -15,7 +15,7 @@
         ?>
       </div>
       <div class="col-span-12 lg:col-span-5">
-        <h4 class="text-white font-novecento uppercase text-lg mb-5">Información de contacto</h4>
+        <h4 class="text-white font-lato uppercase text-lg mb-5">Información de contacto</h4>
         <ul class="text-white text-base [&>li]:mb-3 [&>li]:flex [&>li]:items-center">
           <li>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="w-4 h-4 mr-2 text-secondary-500">

@@ -49,12 +49,6 @@ export default class LeaftleftFindUs {
         selectSelected.classList.toggle("select-arrow-active");
       });
 
-      // Close dropdown when clicking outside of it
-      window.addEventListener("click", function () {
-        selectItems.classList.toggle("show");
-        selectSelected.classList.remove("select-arrow-active");
-      });
-
       // Handle selection of dropdown items
       const countryOptions = selectItems.querySelectorAll(".country-option");
       countryOptions.forEach(function (item) {
@@ -64,12 +58,13 @@ export default class LeaftleftFindUs {
             "coordinates",
             item.getAttribute("coordinates")
           );
-          selectSelected.classList.toggle("show");
+          selectItems.classList.toggle("show");
+          selectSelected.innerHTML = (item.getAttribute("value") === "" ? "Selecciona" : item.getAttribute("value"));
           selectSelected.classList.remove("select-arrow-active");
           const selectedCoordinates = selectSelected
             .getAttribute("coordinates")
             .split(",");
-          map.setView(selectedCoordinates, 10); // Change the zoom level as needed
+          map.setView(selectedCoordinates, 9); // Change the zoom level as needed
         });
       });
     });
@@ -81,9 +76,10 @@ export default class LeaftleftFindUs {
           var marker = L.marker(provider.cooridinates.split(","), {
             icon: customIcon,
           }).addTo(map);
+          console.log(provider.name, ": ", provider.cooridinates.split(","));
           marker.bindPopup("<b>" + provider.name + "</b><br>" + provider.info);
           marker.on("click", function () {
-            map.setView(provider.cooridinates.split(","), 10); // Change the zoom level as needed
+            map.setView(provider.cooridinates.split(","), 9); // Change the zoom level as needed
           });
         });
       }
@@ -94,26 +90,6 @@ export default class LeaftleftFindUs {
       map.eachLayer(function (layer) {
         if (layer instanceof L.Marker) {
           map.removeLayer(layer);
-        }
-      });
-    }
-
-    // Function to search for providers by name and center the map on the first matching provider
-    function searchProviders(query) {
-      clearMarkers();
-      providersList.forEach(function (provider) {
-        if (provider.name.toLowerCase().indexOf(query) !== -1) {
-          var marker = L.marker(provider.cooridinates.split(","), {
-            icon: customIcon,
-          }).addTo(map);
-          marker.bindPopup(`
-                <div class="markerPopup">
-                  <h3>${provider.name}</h3>
-                  <p>${provider.info}</p>
-                </div>
-              `);
-          map.setView(provider.cooridinates.split(","), 10); // Change the zoom level as needed
-          return; // Stop searching after finding the first matching provider
         }
       });
     }

@@ -18,7 +18,7 @@
   }
 
   &__title {
-    @apply text-base text-primary-500 font-novecento uppercase mb-4;
+    @apply text-base text-primary-500 font-lato uppercase mb-4;
   }
 
   &__description {
@@ -26,7 +26,7 @@
   }
 
   &__button {
-    @apply bg-secondary-500 text-white uppercase font-novecento text-base py-3 px-6 rounded-full;
+    @apply bg-secondary-500 text-white uppercase font-lato text-base py-3 px-6 rounded-full;
   }
 }
 

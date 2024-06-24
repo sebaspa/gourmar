@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('VERSION')) {
-  define('VERSION', '1.0.0');
+  define('VERSION', '1.0.1');
 }
 
 function gourmar_setup()
@@ -105,6 +105,7 @@ function listProvidersApi($data)
     array(
       'post_status' => 'publish',
       'post_type' => 'provider',
+      'posts_per_page' => -1,
       'orderby' => 'date',
       'order' => 'DESC',
     )
@@ -121,7 +122,6 @@ function listProvidersApi($data)
   }
 
   echo json_encode($providersJson);
-
 }
 // Countries
 
