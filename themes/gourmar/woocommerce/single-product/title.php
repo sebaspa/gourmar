@@ -19,4 +19,4 @@ if (!defined('ABSPATH')) {
   exit; // Exit if accessed directly.
 }
 
-the_title('<h1 class="product_title entry-title font-adelica-brush text-2xl md:text-4xl text-primary-500 mb-6 md:mb-10">', '</h1>');
+the_title('<h1 class="product_title entry-title font-lato text-2xl md:text-4xl text-primary-500 mb-6 md:mb-10">', '</h1>');

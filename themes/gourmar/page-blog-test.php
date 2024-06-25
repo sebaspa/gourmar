@@ -50,7 +50,7 @@ $recipes = new WP_Query(
 <div class="bg-gray-bg-500 w-full py-12">
   <div class="container max-w-7xl mx-auto px-4">
     <p class="font-lato text-lg text-secondary-500 text-center mb-4 md:mb-10">NOTICAS Y RECETAS</p>
-    <p class="font-adelica-brush text-4xl md:text-6xl text-center text-primary-500 mb-8 md:mb-14">
+    <p class="font-lato text-4xl md:text-6xl text-center text-primary-500 mb-8 md:mb-14">
       Nuestras<br />publicaciones
     </p>
   </div>

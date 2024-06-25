@@ -28,7 +28,7 @@ if ($related_products): ?>
 
     if ($heading):
       ?>
-      <h2 class="font-adelica-brush text-2xl md:text-4xl text-primary-500 mb-6 md:mb-10""><?php echo esc_html($heading); ?></h2>
+      <h2 class="font-lato text-2xl md:text-4xl text-primary-500 mb-6 md:mb-10""><?php echo esc_html($heading); ?></h2>
     <?php endif; ?>
     <div class=" relatedProducts">
       <?php woocommerce_product_loop_start(); ?>

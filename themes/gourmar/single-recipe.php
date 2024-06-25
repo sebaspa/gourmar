@@ -44,7 +44,7 @@ $shortDescription = get_post_meta(get_the_ID(), 'gourmar_fields_recipe_shortDesc
       </div>
     </div>
     <div class="col-span-12 lg:col-span-4">
-      <h1 class="font-adelica-brush text-2xl md:text-4xl text-primary-500 mb-6 md:mb-10">
+      <h1 class="font-lato text-2xl md:text-4xl text-primary-500 mb-6 md:mb-10">
         <?php echo get_the_title() ?>
       </h1>
       <span class="font-bold uppercase text-xs mb-5 text-primary-500 bg-yellow-500 rounded-full px-4 py-2">
@@ -53,7 +53,7 @@ $shortDescription = get_post_meta(get_the_ID(), 'gourmar_fields_recipe_shortDesc
       <p class="mt-5 text-base text-black-500"><?php echo $shortDescription; ?></p>
     </div>
   </div>
-  <p class="font-adelica-brush text-2xl md:text-5xl text-primary-500 mb-6"><?php echo __('Receta', 'gourmar') ?>
+  <p class="font-lato text-2xl md:text-5xl text-primary-500 mb-6"><?php echo __('Receta', 'gourmar') ?>
   </p>
   <div class=" blogContent">
     <?php echo $recipeText; ?>
