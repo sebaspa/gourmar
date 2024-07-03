@@ -1,20 +1,70 @@
 <footer class="py-6 lg:py-14 w-full bg-primary-500">
   <div class="container max-w-7xl ">
-    <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-12 lg:col-span-7">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo-footer.png" alt="gourmar" loading="lazy"
-          width="250" height="68" />
-        <p class="text-white text-xs font-lato mt-1 mb-5 md:mb-0">Seguridad y calidad son nuestra prioridad</p>
+    <style>
+      .footer_new {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .store_item {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 20px
+      }
+
+      .product_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 15px;
+      }
+
+      .product-thumbnail {
+        max-width: 70px;
+        height: auto;
+      }
+    </style>
+    <div class="footer_new">
+      <div>
         <?php
-        wp_nav_menu(
+        // Query for the latest products
+        $latest_products = new WP_Query(
           array(
-            'theme_location' => 'menu-1',
-            'menu_id' => 'primary-menu-footer',
+            'post_type' => 'product',
+            'posts_per_page' => 5, // Number of latest products to display
+            'orderby' => 'date',
+            'order' => 'DESC'
           )
         );
-        ?>
+
+        if ($latest_products->have_posts()): ?>
+          <div class="latest-products">
+            <h4 class="text-white font-lato uppercase text-lg mb-5">Últimos productos</h4>
+            <ul>
+              <?php while ($latest_products->have_posts()):
+                $latest_products->the_post(); ?>
+                <li class="store_item">
+                  <a href="<?php the_permalink(); ?>">
+                    <?php if (has_post_thumbnail()): ?>
+                      <div class="product_container">
+                        <div class="product-thumbnail"><?php the_post_thumbnail('thumbnail'); ?></div>
+                        <div class="product-info">
+                          <p class="text-white font-lato uppercase text-sm mb-5"><?php the_title(); ?></p>
+                        </div>
+                      </div>
+                    <?php endif; ?>
+                  </a>
+                </li>
+              <?php endwhile; ?>
+            </ul>
+          </div>
+          <?php wp_reset_postdata(); ?>
+        <?php endif; ?>
       </div>
-      <div class="col-span-12 lg:col-span-5">
+      <div>
         <h4 class="text-white font-lato uppercase text-lg mb-5">Información de contacto</h4>
         <ul class="text-white text-base [&>li]:mb-3 [&>li]:flex [&>li]:items-center">
           <li>
@@ -40,10 +90,17 @@
           </li>
         </ul>
       </div>
+      <div>
+        <div class="col-span-12 lg:col-span-7">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/logo-footer.png" alt="gourmar" loading="lazy"
+            width="250" height="68" />
+          <p class="text-white text-xs font-lato mt-1 mb-5 md:mb-0">Seguridad y calidad son nuestra prioridad</p>
+        </div>
+      </div>
     </div>
     <div class="grid grid-cols-12 gap-4">
       <div class="col-span-12 md:col-span-9 order-2 md:order-1">
-        <div class="flex flex-col lg:flex-row lg:items-center gap-2 text-white text-xs md:text-base text-left">
+        <div id="legal-text" class="flex flex-col lg:flex-row lg:items-center gap-2 text-white md:text-base text-left">
           <p class="">
             Copyright <?php echo date('Y'); ?>
           </p>
@@ -57,20 +114,6 @@
       </div>
       <div class="col-span-12 md:col-span-3 order-1 md:order-2">
         <div class="flex items-center gap-4 justify-center md:justify-end text-white">
-          <!--
-          <a href="#" target="_blank" rel="noopener noreferrer" title="Twitter">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" fill="none">
-              <path fill="currentColor"
-                d="M16.723 2.635h3.034l-6.626 7.57 7.795 10.305h-6.102l-4.782-6.248-5.466 6.248H1.538l7.086-8.1-7.472-9.775h6.256l4.318 5.71 4.997-5.71Zm-1.065 16.062h1.68L6.493 4.354H4.688l10.97 14.343Z" />
-            </svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" title="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none">
-              <path fill="currentColor"
-                d="M21.656 11.322c0 5.328-3.91 9.754-9.023 10.528v-7.434h2.492l.473-3.094h-2.965V9.346c0-.86.43-1.676 1.762-1.676h1.332V5.049s-1.204-.215-2.407-.215c-2.406 0-3.996 1.504-3.996 4.168v2.32H6.617v3.094h2.707v7.434c-5.113-.774-8.98-5.2-8.98-10.528C.344 5.436 5.114.666 11 .666c5.887 0 10.656 4.77 10.656 10.656Z" />
-            </svg>
-          </a>
-      -->
           <a href="https://www.instagram.com/gourmarsalmon?igsh=MTQzOTd2dzUyOTRueg==" target="_blank"
             rel="noopener noreferrer" title="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" fill="none">
@@ -101,7 +144,8 @@
             </svg>
           </a>
           <a href="https://www.facebook.com/gourmarsa" target="_blank" rel="noopener noreferrer" title="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" fill="#FFF"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"
+              fill="#FFF"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
               <path
                 d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
             </svg>

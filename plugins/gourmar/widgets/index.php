@@ -5,7 +5,9 @@ function gourmar_widgets()
   require_once dirname(__FILE__) . '/filterRecipes.php';
   require_once dirname(__FILE__) . '/lastRecipes.php';
   require_once dirname(__FILE__) . '/lastProducts.php';
+  require_once dirname(__FILE__) . '/featuredProducts.php';
   require_once dirname(__FILE__) . '/mapsWidget.php';
+  require_once dirname(__FILE__) . '/redMapsWidget.php';
   require_once dirname(__FILE__) . '/officesMap.php';
   require_once dirname(__FILE__) . '/products.php';
 }

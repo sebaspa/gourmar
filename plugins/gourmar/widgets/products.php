@@ -118,11 +118,15 @@ class productsWidget extends WP_Widget
               <?php
               $product_id = get_the_ID();
               $product = wc_get_product($product_id);
+              $attributes = $product->get_attributes();
+              $is_new = $attributes['new-product']['name'];
               ?>
               <div class="productCard">
                 <a href="<?php the_permalink(); ?>" class="productCard__link">
                   <div class="productCard__image">
-                    <div class="productCard__image--bullet"><?php echo getCategories(get_the_ID()) ?></div>
+                    <?php if ($is_new): ?>
+                      <div class="productCard__image--bullet"><?php echo $is_new ?></div>
+                    <?php endif; ?>
                     <?php the_post_thumbnail('product_thumbnail'); ?>
                   </div>
                 </a>

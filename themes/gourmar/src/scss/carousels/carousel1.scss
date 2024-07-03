@@ -31,6 +31,8 @@
 }
 
 .carousel_1 {
+  max-height: 550px;
+
   .swiper-pagination {
     .swiper-pagination-bullet {
       @apply w-4 h-4 bg-white opacity-100;
