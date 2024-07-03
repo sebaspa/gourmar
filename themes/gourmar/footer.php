@@ -27,7 +27,7 @@
         height: auto;
       }
     </style>
-    <div class="footer_new">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
         <?php
         // Query for the latest products

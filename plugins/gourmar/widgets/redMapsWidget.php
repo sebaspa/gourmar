@@ -62,10 +62,10 @@ class redMapsWidget extends WP_Widget
     </style>
     <div class="container mx-auto py-12 max-w-5xl px-4" id="findUsSearch">
       <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-12 md:col-span-5">
-          <div id="country-select" class="w-full py-3 px-4 rounded-lg border border-primary-500 text-black-500 text-base">
-            <div value="" class="select-selected">Selecciona</div>
-            <div class="select-items">
+        <div class="col-span-12">
+          <div id="country-select" class="w-full">
+            <div value="" class="select-selected text-primary-500 text-3xl text-center">Selecciona</div>
+            <div class="select-items justify-center mt-4">
               <?php
               while ($countries->have_posts()):
                 $countries->the_post();
@@ -73,7 +73,7 @@ class redMapsWidget extends WP_Widget
                 <div value="<?php echo get_the_title(); ?>"
                   coordinates="<?php echo get_post_meta(get_the_ID(), 'gourmar_fields_country_coordinates', true); ?>"
                   class="country-option">
-                  <img width="24" height="auto"
+                  <img width="30" height="auto"
                     src="<?php echo get_post_meta(get_the_ID(), 'gourmar_fields_country_flag', true); ?>"
                     alt="<?php echo get_the_title(); ?>">
                 </div>
